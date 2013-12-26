@@ -3,6 +3,13 @@ margin: 0;
 padding: 0;
 }
 
+:lang(ko) {
+  display: none;
+}
+:lang(en) {
+  display: none;
+}
+
 p {
 display: block;
 -webkit-margin-before: 1em;

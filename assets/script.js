@@ -1,4 +1,6 @@
 $(document).ready(function(){
+   $(":lang(ko)").show()
+
    $('#nav').onePageNav({
      changeHash: false,
      scrollSpeed: 750,
