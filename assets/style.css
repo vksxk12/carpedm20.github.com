@@ -10,6 +10,16 @@ padding: 0;
   display: none;
 }
 
+.languageSelector {
+width: 90px;
+font-size: 0.7em;
+margin: 0 auto;
+bottom: 1em;
+right: 2em;
+position: fixed;
+z-index: 4000;
+}
+
 p {
 display: block;
 -webkit-margin-before: 1em;
