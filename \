@@ -35,35 +35,26 @@
             <div id="top_navi" class="back_image_mid">
                 <ul class="menu_wrapper">
                     <li class="menu">
-                        <a href="#profile" lang="ko">
-                                프로필 </a>
-                        <a href="#profile" lang="en">
+                        <a href="#profile">
                                 Profile </a>
                     </li>
                     <li class="menu">
-                        <a href="#award" lang="ko">
-                                활동 </a>
-                        <a href="#award" lang="en">
+                        <a href="#award">
                                 Award </a>
                     </li>
                     <li class="menu">
-                        <a href="#project" lang="ko">
-                                프로젝트 </a>
-                        <a href="#project" lang="en">
+                        <a href="#project">
                                 Project </a>
                     </li>
-                    <li>
-										    <a href="http://carpedm20.blogspot.kr" target="_blank" lang="ko">
-														블로그 </a>
-                        <a href="http://carpedm20.blogspot.kr" target="_blank" lang="en">
-                            Blog </a>
                     </li>
                     <li class="menu">
+                        <a href="http://carpedm20.blogspot.kr" target="_blank">
+                                Blog </a>
                     </li>
                 </ul>
               <div style="width: 90px; font-size: 0.7em; margin: 0 auto;">
-                <a href="#" onclick="$(':lang(ko)').show();$(':lang(en)').hide();"><img src="./assets/img/flag_ko.jpg" style="height:16px"></a> / 
-                <a href="#" onclick="$(':lang(en)').show();$(':lang(ko)').hide();"><img src="./assets/img/flag_en.jpg" style="height:16px"></a>
+                <a href="#" onclick="$(':lang(ko)').show();$(':lang(en)').hide();"><img src="./assets/img/flag_ko.jpg" style="height:10"></a> / 
+                <a href="#" onclick="$(':lang(en)').show();$(':lang(ko)').hide();">English</a>
               </div>
               <div class="back_divider">
               </div>
