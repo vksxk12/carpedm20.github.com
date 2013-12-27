@@ -1,9 +1,7 @@
 function lessAll() {
   $(".show-less:lang(ko)").text("자세히 보기");
-  $(".show-more:lang(ko)").text("자세히 보기");
   $(".show-less:lang(ko)").switchClass("show-less", "show-more", 400);
   $(".show-less:lang(en)").text("Show more");
-  $(".show-more:lang(en)").text("Show more");
   $(".show-less:lang(en)").switchClass("show-less", "show-more", 400);
   $(".full-text").switchClass("full-text", "short-text", 400);
 }
