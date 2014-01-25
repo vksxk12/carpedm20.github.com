@@ -65,6 +65,15 @@ function reverseDrawPath() {
     drawPath = !drawPath;
 }
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+}
+
 window.onload = function(){ 
     canvas = document.getElementById("area");
     notes = document.getElementById("fps");
@@ -90,7 +99,6 @@ window.onload = function(){
             this.planets.push(planet);
         };
 
-    drawBackground(context);
         this.calculatePos = function (p) {
             if (drawPath)
                 this.bodySize = 1;
@@ -179,7 +187,7 @@ window.onload = function(){
     function addAsteroidBelt(planet, count) {
         for (var i=0; i<count; i++) {
             var radius = 2.06 + Math.random() * (3.27 - 2.06);
-            planet.addPlanet(new Planet("asteroidBelt", "#777", 
+            planet.addPlanet(new Planet("asteroidBelt", getRandomColor(), 
                 0.1 * Math.random(), radius, radius * 2));
         }
     };
