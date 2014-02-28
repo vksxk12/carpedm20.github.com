@@ -90,7 +90,7 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 </div>
 <p>If you find a file, then you can download the file to your local directory.</p>
 <p>Download:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">nd</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">,</span> <span class="s">&#39;./flower.png&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nd</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">,</span> <span class="s">&#39;./flower.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or you can upload a file:</p>
@@ -279,13 +279,15 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 <tt class="descname">doSearch</tt><big>(</big><em>filename</em>, <em>filetype=None</em>, <em>type=3</em>, <em>full_path='/'</em>, <em>sharedowner='A'</em>, <em>datatype='all'</em>, <em>sort='update'</em>, <em>order='desc'</em>, <em>searchtype='filesearch'</em>, <em>startnum=0</em>, <em>pagingrow=100</em>, <em>includeworks='N'</em>, <em>bodysearch='N'</em>, <em>dummy=36644</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.doSearch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get music album list.</p>
 <dl class="docutils">
-<dt>There are 4 kinds in <tt class="docutils literal"><span class="pre">type</span></tt>&#8221;:</dt>
-<dd>1 =&gt; only directories with idxfolder property
-2 =&gt; only files
-3 =&gt; directories and files with thumbnail info
-ex) viewHeight, viewWidth for Image file
-4 =&gt; only directories except idxfolder
-5 =&gt; directories and files without thumbnail info</dd>
+<dt>There are 4 kinds in <tt class="docutils literal"><span class="pre">type</span></tt>:</dt>
+<dd><ul class="first last simple">
+<li>1 : only directories with idxfolder property</li>
+<li>2 : only files</li>
+<li>3 : directories and files with thumbnail info (like viewHeight, viewWidth for Image file)</li>
+<li>4 : only directories except idxfolder</li>
+<li>5 : directories and files without thumbnail info</li>
+</ul>
+</dd>
 <dt>Tyere are 5 kindes of <tt class="docutils literal"><span class="pre">filetype</span></tt>:</dt>
 <dd>ex) None: all, 1: document, 2:image, 3: video, 4: msuic, 5: zip</dd>
 </dl>
@@ -311,36 +313,37 @@ ex) viewHeight, viewWidth for Image file
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">metadata</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt></p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><p class="first last">List of dict
-- authtoken
-- content
-- copyright
-- creationdate
-- domaintype
-- filelink
-- fileuploadstatus
-- getcontentlength
-- getlastmodified
-- hilightfilename
-- href
-- lastaccessed
-- owner
-- ownerid
-- owneridc
-- owneridx
-- ownership
-- protect
-- resourceno
-- resourcetype
-- root
-- root_shareno
-- s_type
-- sharedfoldername
-- sharedinfo
-- shareno
-- subpath
-- thumbnailpath
-- virusstatus</p>
+<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><ul class="first last simple">
+<li>authtoken</li>
+<li>content</li>
+<li>copyright</li>
+<li>creationdate</li>
+<li>domaintype</li>
+<li>filelink</li>
+<li>fileuploadstatus</li>
+<li>getcontentlength</li>
+<li>getlastmodified</li>
+<li>hilightfilename</li>
+<li>href</li>
+<li>lastaccessed</li>
+<li>owner</li>
+<li>ownerid</li>
+<li>owneridc</li>
+<li>owneridx</li>
+<li>ownership</li>
+<li>protect</li>
+<li>resourceno</li>
+<li>resourcetype</li>
+<li>root</li>
+<li>root_shareno</li>
+<li>s_type</li>
+<li>sharedfoldername</li>
+<li>sharedinfo</li>
+<li>shareno</li>
+<li>subpath</li>
+<li>thumbnailpath</li>
+<li>virusstatus</li>
+</ul>
 </td>
 </tr>
 </tbody>
@@ -349,7 +352,7 @@ ex) viewHeight, viewWidth for Image file
 
 <dl class="method">
 <dt id="ndrive.Ndrive.downloadFile">
-<tt class="descname">downloadFile</tt><big>(</big><em>from_path</em>, <em>to_path</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.downloadFile" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">downloadFile</tt><big>(</big><em>from_path</em>, <em>to_path=''</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.downloadFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download a file.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nd</span><span class="o">.</span><span class="n">downloadFile</span><span class="p">(</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">,</span> <span class="s">&#39;~/flower.png&#39;</span><span class="p">)</span>
 </pre></div>
@@ -425,32 +428,32 @@ ex) viewHeight, viewWidth for Image file
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">nd_list</span>
 </pre></div>
 </div>
-<p>There are 5 kinds of <tt class="docutils literal"><span class="pre">type</span></tt>:</p>
-<div class="highlight-python"><div class="highlight"><pre>1 =&gt; only directories with idxfolder property
-2 =&gt; only files
-3 =&gt; directories and files with thumbnail info
-ex) viewHeight, viewWidth for Image file
-4 =&gt; only directories except idxfolder
-5 =&gt; directories and files without thumbnail info
-</pre></div>
-</div>
-<p>There are 5 kindes of <tt class="docutils literal"><span class="pre">sort</span></tt>:</p>
-<div class="highlight-python"><div class="highlight"><pre>file =&gt; file type, 종류
-length =&gt; size of file, 크기
-date =&gt; edited date, 수정한 날짜
-credate =&gt; creation date, 올린 날짜
-protect =&gt; protect or not, 중요 표시
-</pre></div>
-</div>
+<dl class="docutils">
+<dt>There are 5 kinds of <tt class="docutils literal"><span class="pre">type</span></tt>:</dt>
+<dd><ul class="first last simple">
+<li>1 =&gt; only directories with idxfolder property</li>
+<li>2 =&gt; only files</li>
+<li>3 =&gt; directories and files with thumbnail info (like viewHeight, viewWidth for Image file)</li>
+<li>4 =&gt; only directories except idxfolder</li>
+<li>5 =&gt; directories and files without thumbnail info</li>
+</ul>
+</dd>
+<dt>There are 5 kindes of <tt class="docutils literal"><span class="pre">sort</span></tt>:</dt>
+<dd><ul class="first last simple">
+<li>file : file type, 종류</li>
+<li>length : size of file, 크기</li>
+<li>date : edited date, 수정한 날짜</li>
+<li>credate : creation date, 올린 날짜</li>
+<li>protect : protect or not, 중요 표시</li>
+</ul>
+</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Params full_path:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">The full path to get the file list.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>full_path</strong> &#8211; The full path to get the file list.</li>
 <li><strong>type</strong> &#8211; 1, 2, 3, 4 or 5</li>
 <li><strong>depth</strong> &#8211; Dept for file list</li>
 <li><strong>sort</strong> &#8211; name =&gt; 이름</li>
@@ -458,10 +461,10 @@ protect =&gt; protect or not, 중요 표시
 </ul>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">metadata (list of dict) or False when failed to get list</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">metadata (list of dict) or False when failed to get list</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Metadata:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><ul class="first last simple">
 <li>u&#8217;copyright&#8217;: u&#8217;N&#8217;,</li>
 <li>u&#8217;creationdate&#8217;: u&#8216;2013-05-12T21:17:23+09:00&#8217;,</li>
 <li>u&#8217;filelink&#8217;: None,</li>
@@ -496,20 +499,24 @@ protect =&gt; protect or not, 중요 표시
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tagtype</strong> &#8211; <p>???</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>tagtype</strong> &#8211; <p>???</p>
+</p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><tt class="docutils literal"><span class="pre">metadata</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">metadata</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt></p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body">Music album list as dict format.
-- u&#8217;album&#8217;:u&#8217;Greatest Hits Coldplay&#8217;,
-- u&#8217;artist&#8217;:u&#8217;Coldplay&#8217;,
-- u&#8217;href&#8217;:u&#8217;/Coldplay - Clocks.mp3&#8217;,
-- u&#8217;musiccount&#8217;:1,
-- u&#8217;resourceno&#8217;:12459548378,
-- u&#8217;tagtype&#8217;:1,
-- u&#8217;thumbnailpath&#8217;:u&#8217;N&#8217;,
-- u&#8217;totalpath&#8217;:u&#8217;/&#8217;</td>
+<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><ul class="first last simple">
+<li>u&#8217;album&#8217;:u&#8217;Greatest Hits Coldplay&#8217;,</li>
+<li>u&#8217;artist&#8217;:u&#8217;Coldplay&#8217;,</li>
+<li>u&#8217;href&#8217;:u&#8217;/Coldplay - Clocks.mp3&#8217;,</li>
+<li>u&#8217;musiccount&#8217;:1,</li>
+<li>u&#8217;resourceno&#8217;:12459548378,</li>
+<li>u&#8217;tagtype&#8217;:1,</li>
+<li>u&#8217;thumbnailpath&#8217;:u&#8217;N&#8217;,</li>
+<li>u&#8217;totalpath&#8217;:u&#8217;/&#8217;</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -523,8 +530,7 @@ protect =&gt; protect or not, 중요 표시
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Params full_path:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">The full path to get the file or directory property.</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>full_path</strong> &#8211; The full path to get the file or directory property.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">metadata</span></tt> if success or <tt class="docutils literal"><span class="pre">False</span></tt> if failed to get property</p>
@@ -584,23 +590,17 @@ protect =&gt; protect or not, 중요 표시
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Params full_path:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">The full path to get the file or directory property. Path should start with &#8216;/&#8217;</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>full_path</strong> &#8211; The full path to get the file or directory property. Path should start with &#8216;/&#8217;</li>
+<li><strong>startnum</strong> &#8211; Start version index.</li>
+<li><strong>pagingrow</strong> &#8211; Max # of version list in one page.</li>
+</ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name" colspan="2">Params startnum:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">Start version index.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">metadata</span></tt> if succcess or <tt class="docutils literal"><span class="pre">False</span></tt> (failed to get history or there is no history)</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">Params pagingrow:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first">Max # of version list in one page.</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><tt class="docutils literal"><span class="pre">metadata</span></tt> if succcess or <tt class="docutils literal"><span class="pre">False</span></tt></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><blockquote class="first">
-<div><ul class="simple">
+<tr class="field-odd field"><th class="field-name">Metadata:</th><td class="field-body"><ul class="first last simple">
 <li>createuser</li>
 <li>filesize</li>
 <li>getlastmodified</li>
@@ -608,13 +608,6 @@ protect =&gt; protect or not, 중요 표시
 <li>versioninfo</li>
 <li>versionkey</li>
 </ul>
-</div></blockquote>
-<dl class="last docutils">
-<dt>False:</dt>
-<dd><p class="first last">Failed to get property.
-If there is no history, also return False.</p>
-</dd>
-</dl>
 </td>
 </tr>
 </tbody>
@@ -629,8 +622,7 @@ If there is no history, also return False.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Params full_path:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The full path to get the file or directory property.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>full_path</strong> &#8211; The full path to get the file or directory property.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><tt class="docutils literal"><span class="pre">Integer</span></tt> (number of version lists) or <tt class="docutils literal"><span class="pre">False</span></tt> if failed to get a version list</td>
 </tr>
@@ -806,7 +798,7 @@ ex) /folder/</dd>
 <div class="section" id="license-and-author">
 <h2>License and Author<a class="headerlink" href="#license-and-author" title="Permalink to this headline">¶</a></h2>
 <p>This Ndrive package is opened under the MIT license. See LISENCE file for a further information.</p>
-<p>I&#8217;m <a class="reference external" href="http://carpedm20.us.to/">Kim Tae Hoon</a>, a student who want to be a happy developr :)</p>
+<p>I&#8217;m <a class="reference external" href="http://carpedm20.us.to/">Kim Tae Hoon</a>, a student and developr :)</p>
 </div>
 </div>
 
