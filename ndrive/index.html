@@ -8,8 +8,8 @@
     
     <title>ndrive manual &mdash; ndrive 0.0.1 documentation</title>
     
-    <link rel="stylesheet" href="static/flasky.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -20,9 +20,9 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="ndrive 0.0.1 documentation" href="#" /> 
   </head>
   <body>
@@ -193,6 +193,9 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 <dt id="ndrive.Ndrive.checkUpload">
 <tt class="descname">checkUpload</tt><big>(</big><em>file_obj</em>, <em>full_path='/'</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.checkUpload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether it is possible to upload a file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">checkUpload</span><span class="p">(</span><span class="s">&#39;~/flower.png&#39;</span><span class="p">,</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -378,6 +381,9 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 <dt id="ndrive.Ndrive.getDiskSpace">
 <tt class="descname">getDiskSpace</tt><big>(</big><big>)</big><a class="headerlink" href="#ndrive.Ndrive.getDiskSpace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get disk space information.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">disk_info</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">getDiskSpace</span><span class="p">()</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -407,6 +413,9 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 <dt id="ndrive.Ndrive.getFileLink">
 <tt class="descname">getFileLink</tt><big>(</big><em>full_path</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.getFileLink" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a link of file</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">file_link</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">getFileLink</span><span class="p">(</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -634,8 +643,9 @@ nd.uploadFile(&#8220;test.txt&#8221;,&#8217;/test.txt&#8217;,True) # local_file,
 <dt id="ndrive.Ndrive.login">
 <tt class="descname">login</tt><big>(</big><em>user_id</em>, <em>password</em>, <em>svctype='Android NDrive App ver'</em>, <em>auth=0</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.login" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log in Naver and get cookie</p>
-<blockquote>
-<div>s = nd.login(&#8220;YOUR_ID&#8221;, &#8220;YOUR_PASSWORD&#8221;)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s">&quot;YOUR_ID&quot;</span><span class="p">,</span> <span class="s">&quot;YOUR_PASSWORD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -754,6 +764,9 @@ ex) /folder/</dd>
 <dt id="ndrive.Ndrive.uploadFile">
 <tt class="descname">uploadFile</tt><big>(</big><em>file_obj</em>, <em>full_path</em>, <em>overwrite=False</em><big>)</big><a class="headerlink" href="#ndrive.Ndrive.uploadFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Upload a file as Ndrive really do.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nd</span><span class="o">.</span><span class="n">uploadFile</span><span class="p">(</span><span class="s">&#39;~/flower.png&#39;</span><span class="p">,</span><span class="s">&#39;/Picture/flower.png&#39;</span><span class="p">,</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="docutils">
 <dt>This function imitates the process when Ndrive uploads a local file to its server. The process follows 7 steps:</dt>
 <dd><blockquote class="first">
