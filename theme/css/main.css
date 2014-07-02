@@ -39,8 +39,9 @@ small {
   margin-left: 1em;
 }
 
-#projects h3, #links h3, #awards h3, #presentation h3 {
+#projects h3, #links h3, #awards h3, #presentation h3, #experiments h3{
   margin-left: 1em;
+  margin-bottom: 0.5em;
 }
 /* carpedm20 */
 
