@@ -39,7 +39,11 @@ small {
   margin-left: 1em;
 }
 
-#projects h3, #links h3, #awards h3, #presentation h3, #experience h3{
+#interests ul {
+  padding-left: 1em;
+}
+
+#interests h3, #projects h3, #links h3, #awards h3, #presentation h3, #experience h3{
   margin-left: 1em;
   margin-bottom: 0.8em;
 }
