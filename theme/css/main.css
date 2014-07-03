@@ -17,6 +17,12 @@ p {
 }
 
 /* carpedm20 */
+dd {
+  margin-left: 20px;
+}
+.first.last.simple {
+  padding: 0px;
+}
 li {
   list-style: none;
   margin: 0.3em 0em;
