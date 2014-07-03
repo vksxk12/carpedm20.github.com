@@ -9,7 +9,7 @@
 &lt;p&gt;(.. 진행중 ..)&lt;/p&gt;
 &lt;div class="section" id="perceptrons"&gt;
 &lt;h3&gt;Perceptrons&lt;/h3&gt;
-&lt;p&gt;Neural Network란 무엇인가? 먼저 시작하기 전에, 나는 인공 뉴런의 한 종류인 Perceptron에 대해서 설명하고자 한다. Perceptron은 Warren McCulloch와 Walter Pitts의 초기 작업에 영감을 받아 1950, 60년대에 과학자 Frank Rosenblatt가 개발했다. 요즘은 perceptron 보다는 다른 인공 뉴런 모델을 주로 사용한다. 이 책과 대부분의 오늘날 neural network는 sigmoid neuron을 주로 사용한다. 우리는 곧 sigmoid neuron에 대해 자세히 다룰것이지만, sigmoid neuron이 왜 정의가 되었는지 이해하기 전에 perceptron에 대해서 먼저 이해해 보도록 하자.&lt;/p&gt;
+&lt;p&gt;Neural Network란 무엇인가? 먼저 시작하기 전에, 나는 인공 뉴런의 한 종류인 Perceptron에 대해서 설명하고자 한다. Perceptron은 Warren McCulloch와 Walter Pitts의 초기 작업에 영감을 받아 1950, 60년대에 과학자 Frank Rosenblatt에 의해  개발되었다. 하지만 최근에는 perceptron 보다는 다른 인공 뉴런 모델을 주로 사용한다. 이 책에서 뿐만 아니라 오늘날 사용되는 대부분의neural network 는 sigmoid neuron 을 주로 사용한다. 우리는 조만간 sigmoid neuron 에 대해 자세히 다룰것이지만, sigmoid neuron이 왜 정의가 되었는지 이해하기 전에 perceptron에 대해서 먼저 이해해 보도록 하자.&lt;/p&gt;
 &lt;p&gt;그렇다면 perceptron은 어떻게 작동하는 것일까? 하나의 perceptron은 여러개의 binary input인 x1, x2 ...를 받으며, 하나의 binary output을 만들어 낸다:&lt;/p&gt;
 &lt;img alt="" class="align-center" src="http://neuralnetworksanddeeplearning.com/images/tikz0.png" /&gt;
 &lt;p&gt;위의 예시에서는 세개의 인풋인 x1, x2, x3를 받는다. 일반적인 경우 이보다 더 많거나 적은 input을 받을 수 있다. Rosenblatt은 output을 계산하는 하나의 공식을 제시했다. 그는 w1, w2.. 와 같이 각 input의 상대적 중요도를 나타내는  weight를 소개했다. 뉴런의 output인 0 또는 1은 각 weight와 input들의 곱의 합이 정해진 threshold 값 보다 크거나 작은지에 따라 결정된다. wieght와 같은 다른 parameter처럼  threshold는 실수값을 가진다. 이를 수식으로 설명하면:&lt;/p&gt;
