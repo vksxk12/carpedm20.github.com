@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>carpedm20</title><link>/</link><description></description><atom:link href="/feeds/rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Jul 2014 10:24:00 +0200</lastBuildDate><item><title>[번역] Neural Network를 이용한 손글씨 인지</title><link>/2014/7/3/neural-net-translation/</link><description>&lt;p&gt;&lt;a class="reference external" href="http://neuralnetworksanddeeplearning.com/"&gt;http://neuralnetworksanddeeplearning.com/&lt;/a&gt; 에 올라온 chapter들을 이해하고 기록하고자 번역 작업을 시작한다. 번역의 속도를 높이기 위해 다수의 의역이 포함되어 있다.&lt;/p&gt;
+&lt;div class="section" id="chapter-1-using-neural-nets-to-recognize-handwritten-digits"&gt;
+&lt;h2&gt;CHAPTER 1 Using neural nets to recognize handwritten digits&lt;/h2&gt;
+&lt;p&gt;인간의 사각계는 당연 이 세계의 불가사의 중 하나다. 아래와 같이 손으로 쓴 숫자들이 있다고 하자.&lt;/p&gt;
+&lt;img alt="" class="align-center" src="http://neuralnetworksanddeeplearning.com/images/digits.png" /&gt;
+&lt;p&gt;대부분의 사람들은 그다지 큰 노력없이 504192 라고 읽을 수 있을 것이다. 하지만 이러한 과정이 보기만큼 쉬운것은 아니다. 인간의 두 반구에서는, V1으로 알려진 일차 시각 피질(primary visual cortex)을 가지고 있으며, 이러한 V1은 1억 4천만개의 뉴런과 뉴런 사이에 형성된 100억개의 연결들을 갖고 있다. 하지만 모든 시각 피질(V2, V3, V4 그리고 V5)의 연결들은 더욱 복잡한 이미지 프로세싱을 한다. 즉, 우리는 머릿속에 수억년간 진화해온 슈퍼컴퓨터를 갖고 있으며, 경이로울 정도로 시각적 세계를 이해하는데 적합하도록 진화해 왔다. 다시 손글씨 숫자들 얘기로 돌아가면, 숫자륵 읽는 것은 쉽지 않은 과정이다. 하지만, 우리 인간은 놀랍게도 우리의 눈이 보여주는 것들을 꽤나 잘 이해해 왔다. 이러한 과정은 무의식 중에 일어나며, 그렇기 때문에 우리는 시각계의 문제를 해결하는 것이 얼마나 어려운지를 알아보지 못하곤 한다.&lt;/p&gt;
+&lt;p&gt;시각 패턴 인지의 어려움은 위의 예시처럼 손으로 쓴 숫자들을 읽는 컴퓨터 프로그램을 만들려고 할 때 매우 명백해 진다.&lt;/p&gt;
+&lt;p&gt;(.. 진행중 ..)&lt;/p&gt;
 &lt;div class="section" id="perceptrons"&gt;
-&lt;h2&gt;Perceptrons&lt;/h2&gt;
-&lt;p&gt;Neural Network란 무엇인가? 시작하기전에, 나는 인공 뉴런의 한 종류인 Perceptron에 대해서 설명하고자 한다. Perceptron은 Warren McCulloch와 Walter Pitts의 초기 작업에 영감을 받아 1950, 60년대에 과학자 Frank Rosenblatt가 개발했다. 요즘은 perceptron 보다는 다른 인공 뉴런 모델을 주로 사용한다. 이 책과 대부분의 오늘날 neural network는 sigmoid neuron을 주로 사용한다. 우리는 곧 sigmoid neuron에 대해 자세히 다룰것이지만, sigmoid neuron이 왜 정의가 되었는지 이해하기 전에 perceptron에 대해서 먼저 이해해 보도록 하자.&lt;/p&gt;
+&lt;h3&gt;Perceptrons&lt;/h3&gt;
+&lt;p&gt;Neural Network란 무엇인가? 먼저 시작하기 전에, 나는 인공 뉴런의 한 종류인 Perceptron에 대해서 설명하고자 한다. Perceptron은 Warren McCulloch와 Walter Pitts의 초기 작업에 영감을 받아 1950, 60년대에 과학자 Frank Rosenblatt가 개발했다. 요즘은 perceptron 보다는 다른 인공 뉴런 모델을 주로 사용한다. 이 책과 대부분의 오늘날 neural network는 sigmoid neuron을 주로 사용한다. 우리는 곧 sigmoid neuron에 대해 자세히 다룰것이지만, sigmoid neuron이 왜 정의가 되었는지 이해하기 전에 perceptron에 대해서 먼저 이해해 보도록 하자.&lt;/p&gt;
 &lt;p&gt;그렇다면 perceptron은 어떻게 작동하는 것일까? 하나의 perceptron은 여러개의 binary input인 x1, x2 ...를 받으며, 하나의 binary output을 만들어 낸다:&lt;/p&gt;
 &lt;img alt="" class="align-center" src="http://neuralnetworksanddeeplearning.com/images/tikz0.png" /&gt;
 &lt;p&gt;위의 예시에서는 세개의 인풋인 x1, x2, x3를 받는다. 일반적인 경우 이보다 더 많거나 적은 input을 받을 수 있다. Rosenblatt은 output을 계산하는 하나의 공식을 제시했다. 그는 w1, w2.. 와 같이 각 input의 상대적 중요도를 나타내는  weight를 소개했다. 뉴런의 output인 0 또는 1은 각 weight와 input들의 곱의 합이 정해진 threshold 값 보다 크거나 작은지에 따라 결정된다. wieght와 같은 다른 parameter처럼  threshold는 실수값을 가진다. 이를 수식으로 설명하면:&lt;/p&gt;
@@ -35,6 +42,8 @@
    \end{array}
 \right.
 \tag{2}\end{eqnarray}&lt;p&gt;여러분들은 bias를 perceptron이 얼마나 쉽게 1&lt;/p&gt;
+&lt;p&gt;(.. 진행중 ..)&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">carpedm20</dc:creator><pubDate>Thu, 03 Jul 2014 10:24:00 +0200</pubDate><guid>tag:,2014-07-03:2014/7/3/neural-net-translation/</guid><category>machine learning</category><category>neural network</category><category>perceptron</category><category>sigmoid neuron</category></item><item><title>Moved blog from blogger</title><link>/2014/6/29/moved-blog-from-blogger/</link><description>&lt;p&gt;I moved my blog from blogger (&lt;a class="reference external" href="http://carpedm20.blogspot.kr"&gt;http://carpedm20.blogspot.kr&lt;/a&gt;) to here.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">carpedm20</dc:creator><pubDate>Sun, 29 Jun 2014 23:04:00 +0200</pubDate><guid>tag:,2014-06-29:2014/6/29/moved-blog-from-blogger/</guid><category>blog</category></item></channel></rss>
