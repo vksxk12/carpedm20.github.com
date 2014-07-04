@@ -98,8 +98,126 @@
 
 &lt;a class="displaced_anchor" name="eqtn4"&gt;&lt;/a&gt;\begin{eqnarray}
   \frac{1}{1+\exp(-\sum_j w_j x_j-b)}.
-  \tag{4}\end{eqnarray}&lt;p&gt;처음에 이 식을 보게되면 perceptron과는 무척 달라 보일것이다.&lt;/p&gt;
-&lt;p&gt;( .. 진행중 .. )&lt;/p&gt;
+  \tag{4}\end{eqnarray}&lt;p&gt;처음 위의 식을 보면 perceptron의 식과는 무척 달라 보일것이다. sigmoid function의 수식은 당신이 이미 친숙한 경우가 아니라면 접근하기 어려워 보일지도 모른다. 사실, perceptron과 sigmoid neuron 사이에는 공통점이 많이 있으며, sigmoid 함수의 대수적 형태가 perceptron 보다 더 기술적인 내용들을 포함하고 있다.&lt;/p&gt;
+&lt;p&gt;그렇다면 $\sigma$는 어떻게 생겼을까? 어떻게 우리는 그것을 이해하면 될까? 사실 $\sigma$의 정확한 형태보다는 함수를 그렸을 때의 모양이 더욱 중요하다. 아래 그림은 함수를 그래프로 그린 것이다:&lt;/p&gt;
+
+&lt;p&gt;&lt;div id="sigmoid_graph"&gt;&lt;a name="sigmoid_graph"&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;script src="http://d3js.org/d3.v2.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+function s(x) {return 1/(1+Math.exp(-x));}
+var m = [40, 120, 50, 120];
+var height = 290 - m[0] - m[2];
+var width = 600 - m[1] - m[3];
+var xmin = -5;
+var xmax = 5;
+var sample = 400;
+var x1 = d3.scale.linear().domain([0, sample]).range([xmin, xmax]);
+var data = d3.range(sample).map(function(d){ return {
+      x: x1(d),
+      y: s(x1(d))};
+   });
+var x = d3.scale.linear().domain([xmin, xmax]).range([0, width]);
+var y = d3.scale.linear()
+               .domain([0, 1])
+               .range([height, 0]);
+var line = d3.svg.line()
+   .x(function(d) { return x(d.x); })
+   .y(function(d) { return y(d.y); })
+var graph = d3.select("#sigmoid_graph")
+   .append("svg")
+   .attr("width", width + m[1] + m[3])
+   .attr("height", height + m[0] + m[2])
+   .append("g")
+   .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+var xAxis = d3.svg.axis()
+                  .scale(x)
+                  .tickValues(d3.range(-4, 5, 1))
+                  .orient("bottom")
+graph.append("g")
+   .attr("class", "x axis")
+   .attr("transform", "translate(0, " + height + ")")
+   .call(xAxis);
+var yAxis = d3.svg.axis()
+                  .scale(y)
+                  .tickValues(d3.range(0, 1.01, 0.2))
+                  .orient("left")
+                  .ticks(5)
+graph.append("g")
+   .attr("class", "y axis")
+   .call(yAxis);
+graph.append("path").attr("d", line(data));
+graph.append("text")
+   .attr("class", "x label")
+   .attr("text-anchor", "end")
+   .attr("x", width/2)
+   .attr("y", height+35)
+   .text("z");
+graph.append("text")
+      .attr("x", (width / 2))
+      .attr("y", -10)
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      .text("sigmoid function");
+&lt;/script&gt;&lt;/p&gt;&lt;p&gt;아래의 그림은 sigmoid 함수가 평탄해진 계단 함수(step function)를 나타낸다:&lt;/p&gt;
+&lt;p&gt;
+&lt;div id="step_graph"&gt;&lt;/div&gt;
+&lt;script&gt;
+function s(x) {return x &lt; 0 ? 0 : 1;}
+var m = [40, 120, 50, 120];
+var height = 290 - m[0] - m[2];
+var width = 600 - m[1] - m[3];
+var xmin = -5;
+var xmax = 5;
+var sample = 400;
+var x1 = d3.scale.linear().domain([0, sample]).range([xmin, xmax]);
+var data = d3.range(sample).map(function(d){ return {
+      x: x1(d),
+      y: s(x1(d))};
+   });
+var x = d3.scale.linear().domain([xmin, xmax]).range([0, width]);
+var y = d3.scale.linear()
+               .domain([0,1])
+               .range([height, 0]);
+var line = d3.svg.line()
+   .x(function(d) { return x(d.x); })
+   .y(function(d) { return y(d.y); })
+var graph = d3.select("#step_graph")
+   .append("svg")
+   .attr("width", width + m[1] + m[3])
+   .attr("height", height + m[0] + m[2])
+   .append("g")
+   .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+var xAxis = d3.svg.axis()
+                  .scale(x)
+                  .tickValues(d3.range(-4, 5, 1))
+                  .orient("bottom")
+graph.append("g")
+   .attr("class", "x axis")
+   .attr("transform", "translate(0, " + height + ")")
+   .call(xAxis);
+var yAxis = d3.svg.axis()
+                  .scale(y)
+                  .tickValues(d3.range(0, 1.01, 0.2))
+                  .orient("left")
+                  .ticks(5)
+graph.append("g")
+   .attr("class", "y axis")
+   .call(yAxis);
+graph.append("path").attr("d", line(data));
+graph.append("text")
+   .attr("class", "x label")
+   .attr("text-anchor", "end")
+   .attr("x", width/2)
+   .attr("y", height+35)
+   .text("z");
+graph.append("text")
+      .attr("x", (width / 2))
+      .attr("y", -10)
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      .text("step function");
+&lt;/script&gt;
+&lt;/p&gt;&lt;p&gt;만약 $\sigma$가 &lt;/p&gt;&lt;p&gt;( .. 진행중 .. )&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">carpedm20</dc:creator><pubDate>Thu, 03 Jul 2014 10:24:00 +0200</pubDate><guid>tag:,2014-07-03:2014/7/3/neural-net-translation/</guid><category>machine learning</category><category>neural network</category><category>perceptron</category><category>sigmoid neuron</category></item><item><title>Moved blog from blogger</title><link>/2014/6/29/moved-blog-from-blogger/</link><description>&lt;p&gt;I moved my blog from blogger (&lt;a class="reference external" href="http://carpedm20.blogspot.kr"&gt;http://carpedm20.blogspot.kr&lt;/a&gt;) to here.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">carpedm20</dc:creator><pubDate>Sun, 29 Jun 2014 23:04:00 +0200</pubDate><guid>tag:,2014-06-29:2014/6/29/moved-blog-from-blogger/</guid><category>blog</category></item></channel></rss>
