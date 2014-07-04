@@ -60,16 +60,7 @@
 &lt;img alt="" class="align-center" src="http://neuralnetworksanddeeplearning.com/images/tikz6.png" /&gt;
 &lt;p&gt;output은 있지만 input은 없는 input perceptron은&lt;/p&gt;
 &lt;img alt="" class="align-center" src="http://neuralnetworksanddeeplearning.com/images/tikz7.png" /&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/home/carpedm20/blog/content/blog/2014/neural_network.rst&lt;/tt&gt;, line 136)&lt;/p&gt;
-&lt;p&gt;Content block expected for the &amp;quot;raw&amp;quot; directive; none found.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-.. raw:: html
-   &amp;lt;p&amp;gt;다음과 같이 표기할 수 있다. 사실 이것은 input이 없는 perceptron을 뜻하지는 않는다. 한번 input이 없는 perceptron을 생각해 보자. 그렇다면 $\sum_j w_j x_j$ 은 언제나 0이 되며, $b &amp;gt; 0$라면 $1$의 output을 $b \leq 0$면 $0$의 output을 나타낼 것이다. 즉, perceptron은 우리가 원하는 값이 아닌 항상 고정된 값만 출력할 것이다. 그렇기 때문에 input perceptron을 perceptron이 아니라 단순히 x1, x2 ... 와 같은 고정된 값으로 정의된 단위 유닛(unit)으로 생각하는 것이 낫다. &amp;lt;/p&amp;gt;
-
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;위의 예제에서는 많은 NAND 게이트를 가진 회로를 perceptron의 network로 나타내는 방법을 보여주었다. 그리고 NAND 게이트로 모든 계산이 가능하기 때문에, perceptron의 network 또한 모든 계산이 가능하다는 것을 보여준다.&lt;/p&gt;
+&lt;p&gt;위와같이 간단하게 표기할 수 있다. 사실 이것은 input이 없는 perceptron을 뜻하지는 않는다. 한번 input이 없는 perceptron을 생각해 보자. 그렇다면 $\sum_j w_j x_j$ 은 언제나 0이 되며, $b &gt; 0$라면 $1$의 output을 $b \leq 0$면 $0$의 output을 나타낼 것이다. 즉, perceptron은 우리가 원하는 값이 아닌 항상 고정된 값만 출력할 것이다. 그렇기 때문에 input perceptron을 perceptron이 아니라 단순히 x1, x2 ... 와 같은 고정된 값으로 정의된 단위 유닛(unit)으로 생각하는 것이 낫다. &lt;/p&gt;&lt;p&gt;위의 예제에서는 많은 NAND 게이트를 가진 회로를 perceptron의 network로 나타내는 방법을 보여주었다. 그리고 NAND 게이트로 모든 계산이 가능하기 때문에, perceptron의 network 또한 모든 계산이 가능하다는 것을 보여준다.&lt;/p&gt;
 &lt;p&gt;( .. 진행중 .. )&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sigmoid-neurons"&gt;
