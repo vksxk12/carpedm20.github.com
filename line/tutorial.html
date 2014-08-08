@@ -93,6 +93,11 @@ which will notify your LINE session.</p>
 </pre></div>
 </div>
 <p>You can save your authToken in cache like <em>redis</em> or something else!</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the client will be expired after a specific time (I couldn&#8217;t find a exact
+time yet), so you have to get a new <cite>authToken</cite> after it is expired.</p>
+</div>
 </div>
 <div class="section" id="part-2-profile-and-contacts">
 <h2>Part 2: Profile and Contacts<a class="headerlink" href="#part-2-profile-and-contacts" title="Permalink to this headline">¶</a></h2>
@@ -163,6 +168,65 @@ list of recent messages, use <cite>getRecentMessages</cite> method:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">contact</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getContactFromName</span><span class="p">(</span><span class="s">&#39;CONTACT_NAME&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>There are other methods in <cite>contact</cite>, <cite>rooms</cite> and <cite>group</cite> instances so I&#8217;ll
+recommend you to take a look at the <em class="xref std std-ref">models</em> section.</p>
+</div>
+<div class="section" id="part-4-make-your-own-bot">
+<h2>Part 4: Make your own bot<a class="headerlink" href="#part-4-make-your-own-bot" title="Permalink to this headline">¶</a></h2>
+<p>So, most of you may want to use <em>line</em> to make your LINE bot. I also started this
+project to make a bot, so let&#8217;s talk about how to make our own bot. Below code
+is a basic structure of a LINE bot:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span><span class="p">,</span> <span class="n">LineGroup</span><span class="p">,</span> <span class="n">LineContact</span>
+
+<span class="k">try</span><span class="p">:</span>
+   <span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;ID&quot;</span><span class="p">,</span> <span class="s">&quot;PASSWORD&quot;</span><span class="p">)</span>
+   <span class="c">#client = LineClient(authToken=&quot;AUTHTOKEN&quot;)</span>
+<span class="k">except</span><span class="p">:</span>
+   <span class="k">print</span> <span class="s">&quot;Login Failed&quot;</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+   <span class="n">op_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="hll">   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">longPoll</span><span class="p">():</span>
+</span>      <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
+
+   <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+      <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>One of the most important line is #12, and you might notice there is a new
+method named <cite>longPoll</cite>. This method pull a list of operations which should
+be handled by our LINE bot. There are various type of operations, but
+our interest might be <cite>RECEIVE_MESSAGE</cite> operation. This operation contain a new
+message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</cite>. So we can get a received
+<cite>message</cite> and its <cite>sender</cite> by</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -182,6 +246,7 @@ list of recent messages, use <cite>getRecentMessages</cite> method:</p>
 <li><a class="reference internal" href="#part-1-login-and-pin-authentication">Part 1: Login and Pin authentication</a></li>
 <li><a class="reference internal" href="#part-2-profile-and-contacts">Part 2: Profile and Contacts</a></li>
 <li><a class="reference internal" href="#part-3-rooms-and-groups">Part 3: Rooms and Groups</a></li>
+<li><a class="reference internal" href="#part-4-make-your-own-bot">Part 4: Make your own bot</a></li>
 </ul>
 </li>
 </ul>
