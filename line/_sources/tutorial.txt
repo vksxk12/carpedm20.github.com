@@ -73,7 +73,7 @@ Then, choose anyone to send a hello world message, and send it away!
 
 .. code-block:: python
 
-   >>> friend = client.contacs[0]
+   >>> friend = client.contacts[0]
    >>> friend.sendMessage("hello world!")
    True
 
@@ -92,6 +92,7 @@ friend. If you want to receive 10 recent messages:
 .. code-block:: python
 
    >>> messages = friend.getRecentMessages(count=10)
+   >>> print messages
    [LineMessage (contentType=NONE, sender=None, receiver=<LineContact 파랑봇>, msg="hello World!")]
 
 I just make a one conversation with *파랑봇* so I only get one message with `getRecentMessages` method.
@@ -115,6 +116,7 @@ Now let's see a list of  `group` and `room` you are participated in.
 
 In the case of `client.groups` you can see a word *(invited)* and this represent
 that you are invited to a group but you didn't accep the invitation yet.
+'#{number}' means the number of members in the specific group.
 If you want to accept it:
 
 .. code-block:: python

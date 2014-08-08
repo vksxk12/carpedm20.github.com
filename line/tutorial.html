@@ -110,7 +110,7 @@ to login to LINE! But you have to choose which one to send a <cite>message</cite
 </pre></div>
 </div>
 <p>Then, choose anyone to send a hello world message, and send it away!</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;hello world!&quot;</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
@@ -125,6 +125,7 @@ to login to LINE! But you have to choose which one to send a <cite>message</cite
 <p>If you see <cite>True</cite> message, then it means message is successfully sended to your
 friend. If you want to receive 10 recent messages:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">friend</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">messages</span>
 <span class="go">[LineMessage (contentType=NONE, sender=None, receiver=&lt;LineContact 파랑봇&gt;, msg=&quot;hello World!&quot;)]</span>
 </pre></div>
 </div>
@@ -144,6 +145,7 @@ has its own name but <cite>room</cite> don&#8217;t have any room for itself.</p>
 </div>
 <p>In the case of <cite>client.groups</cite> you can see a word <em>(invited)</em> and this represent
 that you are invited to a group but you didn&#8217;t accep the invitation yet.
+&#8216;#{number}&#8217; means the number of members in the specific group.
 If you want to accept it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">group</span><span class="o">.</span><span class="n">acceptGroupInvitation</span><span class="p">()</span>
