@@ -4,9 +4,9 @@ LINE manual
 Introduction
 ------------
 
-*line* is a python library that alow you to send and receive LINE messages.
-With *line* you can use LINE in CLI (command line interface) or you can also
-make your onw LINE bot which will automatically reply for defined commands!
+*line* is a python library that alow you to send and receive a LINE message.
+With *line* you can use LINE on any systems like Ubuntu or make your owb 
+LINE bot which will automatically reply for your message!
 
 Enjoy *line* and *May the LINE be with you...*
 
