@@ -25,8 +25,8 @@ everytime when you create a new `LineClient` instance.
    >>> client = LineClient(authToken=authToken) # login with authToken
 
 
-Reference
----------
+LineClient
+----------
 
 .. autoclass:: line.LineClient
     :members:
