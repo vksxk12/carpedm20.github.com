@@ -25,6 +25,13 @@ Key Features
 * `longPoll` method which will allow you to make a LINE bot easily
 
 
+Todo
+----
+
+* Sending a Image
+* More usable methods and objects
+
+
 Installation
 ------------
 
