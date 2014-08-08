@@ -93,11 +93,11 @@ Echo bot example
          op_list.append(op)
 
       for op in op_list:
-         message          = op[1]
-         group_or_contact = op[0]
+         sender  = op[0]
+         message = op[1]
 
          msg = message.text
-         group_or_contact.sendMessage(msg)
+         sender.sendMessage(msg)
 
 License
 -------
@@ -108,6 +108,3 @@ Author
 ------
 
 Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`_
-
-.. |PyPi version| image:: https://pypip.in/v/line/badge.png
-.. |PyPi downloads| image:: https://pypip.in/d/line/badge.png

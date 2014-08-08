@@ -153,11 +153,11 @@ can be change without any notification. So, read the documentaion carefully.</p>
       <span class="n">op_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
 
    <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">op_list</span><span class="p">:</span>
-      <span class="n">message</span>          <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-      <span class="n">group_or_contact</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">sender</span>  <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="n">op</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
       <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
-      <span class="n">group_or_contact</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+      <span class="n">sender</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
