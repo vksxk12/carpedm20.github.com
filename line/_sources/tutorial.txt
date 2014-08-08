@@ -1,0 +1,60 @@
+LINE Episode I: A New Hope
+==========================
+
+If you are a core pythonic programmer, you can jump into writing the code
+right away! But if you are not familiar with Python, you should read this
+tutorial first before proceeding to the more details of *line*. Now, this
+manual will git you a quick introduction on how you can send a message and 
+do other things with *line*
+
+
+Part 1: Login and Pin authentication
+------------------------------------
+
+Let's start with login to LINE and pass through a pin authentication.
+
+.. code-block:: python
+   
+   >>> from line import LineClient
+   >>> client = LineClient("carpedm20@gmail.com", "xxxxxxxxxx")
+   Enter PinCode '7390' to your mobile phone in 2 minutes
+   >>> client = LineClient("carpedm20", "xxxxxxxxxx")
+   Enter PinCode '9779' to your mobile phone in 2 minutes
+
+As you can see, you can login by making a `LineClient` instance and pass your
+email and password as parameters. If you have a NAVER account and link it to 
+LINE account, you can login with your NAVER account! 
+
+Then, you will see a `PinCode` which you have to put in to your mobile phone
+to authenticate your `LineClinet` instance as a desktop Line client. This number
+will be expired in 2 minutes, so don't be lazy!
+
+If you enter your `Pincode` to your mobile phone, now you can see your `authToken`
+which will notify your LINE session.
+
+.. code-block:: python
+
+   >>> authToken = client.authToken
+   >>> print authToken
+
+
+With this `authToken`, you don't have to enter `Pincode` when you create a new
+`LineClient` instance!
+
+.. code-block:: python
+
+   >>> client = LineClient(authToken=authToken)
+   >>> print client.profile
+
+You can save your authToken in cache like *redis* or something else!
+
+
+Part 2: Profile and Contacts
+----------------------------
+
+Now, you might want to send any `message` to your friend that you have succeeded
+to login to LINE! But you have to choose which one to send a `message`.
+
+.. code-block:: python
+
+   >>> print client.contacts  # your friends

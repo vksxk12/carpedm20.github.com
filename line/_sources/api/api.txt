@@ -1,0 +1,6 @@
+LineAPI
+=======
+
+.. autoclass:: line.LineAPI
+   :members:
+   :private-members:

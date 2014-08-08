@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LINE Episode I: A New Hope &mdash; LINE api doc 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="LINE api doc 0.1.5 documentation" href="index.html" />
+    <link rel="next" title="LineClient" href="api/client.html" />
+    <link rel="prev" title="LINE manual" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api/client.html" title="LineClient"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="LINE manual"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="line-episode-i-a-new-hope">
+<h1>LINE Episode I: A New Hope<a class="headerlink" href="#line-episode-i-a-new-hope" title="Permalink to this headline">¶</a></h1>
+<p>If you are a core pythonic programmer, you can jump into writing the code
+right away! But if you are not familiar with Python, you should read this
+tutorial first before proceeding to the more details of <em>line</em>. Now, this
+manual will git you a quick introduction on how you can send a message and
+do other things with <em>line</em></p>
+<div class="section" id="part-1-login-and-pin-authentication">
+<h2>Part 1: Login and Pin authentication<a class="headerlink" href="#part-1-login-and-pin-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s start with login to LINE and pass through a pin authentication.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">line</span> <span class="kn">import</span> <span class="n">LineClient</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;7390&#39; to your mobile phone in 2 minutes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="s">&quot;carpedm20&quot;</span><span class="p">,</span> <span class="s">&quot;xxxxxxxxxx&quot;</span><span class="p">)</span>
+<span class="go">Enter PinCode &#39;9779&#39; to your mobile phone in 2 minutes</span>
+</pre></div>
+</div>
+<p>As you can see, you can login by making a <cite>LineClient</cite> instance and pass your
+email and password as parameters. If you have a NAVER account and link it to
+LINE account, you can login with your NAVER account!</p>
+<p>Then, you will see a <cite>PinCode</cite> which you have to put in to your mobile phone
+to authenticate your <cite>LineClinet</cite> instance as a desktop Line client. This number
+will be expired in 2 minutes, so don&#8217;t be lazy!</p>
+<p>If you enter your <cite>Pincode</cite> to your mobile phone, now you can see your <cite>authToken</cite>
+which will notify your LINE session.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">authToken</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">authToken</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">authToken</span>
+</pre></div>
+</div>
+<p>With this <cite>authToken</cite>, you don&#8217;t have to enter <cite>Pincode</cite> when you create a new
+<cite>LineClient</cite> instance!</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="n">authToken</span><span class="o">=</span><span class="n">authToken</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">profile</span>
+</pre></div>
+</div>
+<p>You can save your authToken in cache like <em>redis</em> or something else!</p>
+</div>
+<div class="section" id="part-2-profile-and-contacts">
+<h2>Part 2: Profile and Contacts<a class="headerlink" href="#part-2-profile-and-contacts" title="Permalink to this headline">¶</a></h2>
+<p>Now, you might want to send any <cite>message</cite> to your friend that you have succeeded
+to login to LINE! But you have to choose which one to send a <cite>message</cite>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span>  <span class="c"># your friends</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="index.html">
+        <img src="_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LINE Episode I: A New Hope</a><ul>
+<li><a class="reference internal" href="#part-1-login-and-pin-authentication">Part 1: Login and Pin authentication</a></li>
+<li><a class="reference internal" href="#part-2-profile-and-contacts">Part 2: Profile and Contacts</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">LINE manual</a></li>
+      <li>Next: <a href="api/client.html" title="next chapter">LineClient</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/line/issues">Issue Tracker</a></li>
+  </ul>
+  <p><b>Package:</b></p>
+  <ul>
+    <li>
+        <a href="http://badge.fury.io/py/line">
+            <img src="https://badge.fury.io/py/line.png"/>
+        </a>
+    </li>
+    <li>
+        <a href="https://crate.io/packages/line/">
+            <img src="https://pypip.in/d/line/badge.png"/>
+        </a>
+    </li>
+  </ul>
+  <p><b>Github:</b></p>
+  <ul>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20">
+        </iframe>
+    </li>
+    <li>
+        <iframe 
+            src="http://ghbtns.com/github-btn.html?user=carpedm20&repo=line&type=follow&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="140" height="20">
+        </iframe>
+    </li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, Kim Tae Hoon.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>
