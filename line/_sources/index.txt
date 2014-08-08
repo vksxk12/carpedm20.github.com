@@ -1,6 +1,10 @@
 LINE manual
 ===========
 
+.. Announcement::
+
+   Some codes are removed because of the request of LINE corporation. (2014.08.08)
+
 Introduction
 ------------
 
