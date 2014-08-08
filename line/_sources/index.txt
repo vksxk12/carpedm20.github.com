@@ -1,12 +1,13 @@
 LINE manual
 ===========
 
-Introduction
-------------
-
-.. Announcement::
+.. warning::
 
    Some codes are removed because of the request of LINE corporation. (2014.08.08)
+
+
+Introduction
+------------
 
 *line* is a python library that alow you to send and receive a LINE message.
 With *line* you can use LINE on any systems like Ubuntu or make your owb 
