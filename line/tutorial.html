@@ -84,21 +84,81 @@ will be expired in 2 minutes, so don&#8217;t be lazy!</p>
 which will notify your LINE session.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">authToken</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">authToken</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">authToken</span>
+<span class="go">DJg5VZTBdkjMCQOeodf4.9guiWkX1koTnwiGNVkacva.49blBzv5W9ex/2M06QQofByLxigMCAnnGfmTOAgY3wo=</span>
 </pre></div>
 </div>
 <p>With this <cite>authToken</cite>, you don&#8217;t have to enter <cite>Pincode</cite> when you create a new
 <cite>LineClient</cite> instance!</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">LineClient</span><span class="p">(</span><span class="n">authToken</span><span class="o">=</span><span class="n">authToken</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">profile</span>
 </pre></div>
 </div>
 <p>You can save your authToken in cache like <em>redis</em> or something else!</p>
 </div>
 <div class="section" id="part-2-profile-and-contacts">
 <h2>Part 2: Profile and Contacts<a class="headerlink" href="#part-2-profile-and-contacts" title="Permalink to this headline">¶</a></h2>
-<p>Now, you might want to send any <cite>message</cite> to your friend that you have succeeded
+<p>Now, let&#8217;s see your profile to check whether <cite>PinCode</cite> authentication was
+successful or not.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;&gt; profile = client.profile
+&gt;&gt; print profile
+&lt;LineContact 김태훈&gt;
+</pre></div>
+</div>
+<p>You might want to send any <cite>message</cite> to your friend that you have succeeded
 to login to LINE! But you have to choose which one to send a <cite>message</cite>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span>  <span class="c"># your friends</span>
+<span class="go">[&lt;LineContact 파랑봇&gt; &lt;LineContact 검정봇&gt;]</span>
+</pre></div>
+</div>
+<p>Then, choose anyone to send a hello world message, and send it away!</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s">&quot;hello world!&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you want to send a <cite>sticker</cite> (which is one of the most fun features of LINE!)</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendSticker</span><span class="p">()</span> <span class="c"># send a default sticker</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">friend</span><span class="o">.</span><span class="n">sendSticker</span><span class="p">(</span><span class="n">stickerId</span><span class="o">=</span><span class="s">&quot;13&quot;</span><span class="p">,</span><span class="n">stickerPackageId</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="n">stickerVersion</span><span class="o">=</span><span class="s">&quot;100&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you see <cite>True</cite> message, then it means message is successfully sended to your
+friend. If you want to receive 10 recent messages:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">friend</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">[LineMessage (contentType=NONE, sender=None, receiver=&lt;LineContact 파랑봇&gt;, msg=&quot;hello World!&quot;)]</span>
+</pre></div>
+</div>
+<p>I just make a one conversation with <em>파랑봇</em> so I only get one message with <cite>getRecentMessages</cite> method.</p>
+</div>
+<div class="section" id="part-3-rooms-and-groups">
+<h2>Part 3: Rooms and Groups<a class="headerlink" href="#part-3-rooms-and-groups" title="Permalink to this headline">¶</a></h2>
+<p>There are two type of chat rooms in LINE, one is just a <cite>room</cite> with multiple users,
+and the other is <cite>group</cite> which have more features then room. For examle, <cite>group</cite>
+has its own name but <cite>room</cite> don&#8217;t have any room for itself.</p>
+<p>Now let&#8217;s see a list of  <cite>group</cite> and <cite>room</cite> you are participated in.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span>
+<span class="go">[&lt;LineGroup 하트 #4&gt;, &lt;LineGroup 검정 #1 (invited)&gt;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">client</span><span class="o">.</span><span class="n">rooms</span>
+<span class="go">&lt;LineRoom [&lt;LineContact 파랑봇&gt;]&gt;, &lt;LineRoom [&lt;LineContact 파랑봇&gt;, &lt;LineContact 검정봇&gt;]&gt;]</span>
+</pre></div>
+</div>
+<p>In the case of <cite>client.groups</cite> you can see a word <em>(invited)</em> and this represent
+that you are invited to a group but you didn&#8217;t accep the invitation yet.
+If you want to accept it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">group</span><span class="o">.</span><span class="n">acceptGroupInvitation</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Other methods are same as the case of <cite>contact</cite> like if you want to get a
+list of recent messages, use <cite>getRecentMessages</cite> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">messages</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getRecentMessages</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you have too much groups and want to find a specific group with its <cite>name</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">group</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getGroupFromName</span><span class="p">(</span><span class="s">&#39;GROUP_NAME&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">contact</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getContactFromName</span><span class="p">(</span><span class="s">&#39;CONTACT_NAME&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -119,6 +179,7 @@ to login to LINE! But you have to choose which one to send a <cite>message</cite
 <li><a class="reference internal" href="#">LINE Episode I: A New Hope</a><ul>
 <li><a class="reference internal" href="#part-1-login-and-pin-authentication">Part 1: Login and Pin authentication</a></li>
 <li><a class="reference internal" href="#part-2-profile-and-contacts">Part 2: Profile and Contacts</a></li>
+<li><a class="reference internal" href="#part-3-rooms-and-groups">Part 3: Rooms and Groups</a></li>
 </ul>
 </li>
 </ul>
