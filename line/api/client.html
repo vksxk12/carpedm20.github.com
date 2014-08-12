@@ -384,21 +384,13 @@ Line cleint.</p>
 </tr>
 </tbody>
 </table>
-<dl class="docutils">
-<dt>while True:</dt>
-<dd><p class="first">op_list = []</p>
-<dl class="last docutils">
-<dt>for op in client.longPoll():</dt>
-<dd>op_list.append(op)</dd>
-<dt>for op in op_list:</dt>
-<dd><p class="first">message = op[1]
-sender  = op[0]</p>
-<p class="last">msg = message.text
-sender.sendMessage(msg)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">longPoll</span><span class="p">():</span>
+<span class="go">        sender   = op[0]</span>
+<span class="go">        receiver = op[1]</span>
+<span class="go">        message  = op[2]</span>
+<span class="go">        print &quot;%s-&gt;%s : %s&quot; % (sender, receiver, message)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
