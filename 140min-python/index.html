@@ -58,11 +58,11 @@
 
 				<section data-transition="linear" data-background="#3f3f3f" data-background-transition="slide">
           <pre class="zenburn" style="width:70%;">
-            <code class="python" data-trim>
+            <code class="python" style="font-size:1.5em;" data-trim>
 me = Person()
+
 while(me.awake()):
-    me.hack()
-    me.code()
+  me.hack()
             </code>
           </pre>
         </section>
@@ -158,18 +158,18 @@ while(me.awake()):
 using namespace std;
 
 int main() {
-  int row;
-  cout << "row : ";
-  cin >> row;
-  for (int i = 0; i < row; i++) {
-    for (int j = 0; j < row - i; j++)
-      cout << ' ';
+    int row;
+    cout << "row : ";
+    cin >> row;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < row - i; j++)
+            cout << ' ';
 
-    for (int j = 0; j < 2 * i + 1; j++)
-      cout << '*';
+        for (int j = 0; j < 2 * i + 1; j++)
+            cout << '*';
 
-    cout << endl;
-  }
+        cout << endl;
+    }
 }
 
 // test
@@ -213,29 +213,42 @@ for i in range(row):
               if "여친" not in ["김태희","천송이","공효진"]:
                 print "여친이 없습니다"
 
-              for i in ["설마","벌써","지루하신건","아니시죠?"]:
+              for i in ["설마", "벌써", "지루하신건", "아니시죠?"]:
                 print i
               ```
             </script>
           </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ## 2. 간결하다
-              <small><em>라고 쓰고 "우아하다" 라고 읽는다</em></small>
+          <section>
+            <h2> 2. 간결하다</h2>
+            <small><em>라고 쓰고 "우아하다" 라고 읽는다</em></small>
+            <br/>
+            <pre class="zenburn left" style="width:49%;">
+              <code class="python" data-trim>
+langs = ['python', 'c++', 'java']
 
-              ```
-              languages = ['python', 'perl', 'c', 'java']
+for lang in langs:
+    if lang in ['python']:
+        print lang + " is good"
+    else:
+        print lang + " is not fun"
+                </code>
+              </pre>
+            <pre class="monokai right" style="width:50%;">
+              <code class="cpp" style="font-size:0.85em;" data-trim>
+#include < algorithm>
+string langs[3] = ["python","c++","java"];
 
-              for lang in languages:
-                  if lang in ['python', 'perl']:
-                      print("%6s need interpreter" % lang)
-                  elif lang in ['c', 'java']:
-                      print("%6s need compiler" % lang)
-                  else:
-                      print("should not reach here")
-              ```
-            </script>
+int size=sizeof(langs)/sizeof(*langs);
+for (int i=0; i < size; i++) {
+    if (find(nums, nums+size, i) != nums+size) {
+        cout << langs[i] << " is good" << endl;
+    } else {
+        cout << langs[i] << " is not fun\n";
+    }
+}
+              </code>
+            </pre>
           </section>
 
           <section>
@@ -317,11 +330,6 @@ for i in range(row):
         </section>
 
         <section data-transition="linear" data-background="#ffffff" data-background-transition="slide">
-          <img class="borderless" src="img/httpie.png">
-          <p><small><em>a CLI, cURL-like tool for humans</em></small></p>
-        </section>
-
-        <section data-transition="linear" data-background="#ffffff" data-background-transition="slide">
           <img class="borderless" src="img/requests.png">
           <p><small><em>Python HTTP Requests for Humans</em></small></p>
         </section>
@@ -399,8 +407,8 @@ print my_dict["pi"]
           </pre>
           <pre class="monokai left" style="margin-left: 10px; width:48%;">
             <code class="transparent cpp" data-trim>
-#include <map>
-#include <string>
+#include < map>
+#include < string>
 
 // partially possible
 string my_list[2] = {"apple", "banana"};
@@ -416,8 +424,6 @@ my_dict["pi"] = 3.14;
 
 cout << my_dict["pi"] << endl;
 // 3.14
-
-//test
             </code>
           </pre>
         </section>
@@ -442,25 +448,22 @@ while nums[1] == 1:
           </pre>
           <pre class="monokai left" style="margin-left: 9px; width:48%;">
             <code class="transparent cpp" style="font-size: 0.85em;" data-trim>
+#include < algorithm>
+
 int nums[10];
 for (int i=0; i<10; i++)
-  nums[i] = i;
+    nums[i] = i;
 
-cout << nums<< endl;
+cout << nums << endl;
 // 0x7fff59c965a0
 
-#include <algorithm>
 int size=sizeof(nums)/sizeof(*nums);
-
 for (int i=0; i < size; i++) {
     if (find(nums, nums+size, i) != nums+size) {
         break;
     else
         continue;
 }
-
-
-// test
             </code>
           </pre>
         </section>
