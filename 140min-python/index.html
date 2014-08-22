@@ -124,6 +124,13 @@ python pyramid.py
           <small><em>소스코드가 곧 실행파일</em></small>
         </section>
 
+        <section>
+          <h3>다른 스크립트 언어들</h3>
+          <img style="width:22%" class="left" src="img/ruby.png">
+          <img style="width:37%" src="img/php.png">
+          <img style="width:32%" class="right" src="img/javascript.png">
+				</section>
+
         <section data-transition="fade">
 					<h2>왜 배워야 할까?</h2>
           <p>스크립트 언어 (?)</p>
@@ -157,16 +164,138 @@ python pyramid.py
           </div>
         </section>
 
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+          <pre class="googlecode right" style="width:50%;">
+            <code class="cpp" style="font-size:0.81em;" data-trim>
+$ python
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+          <pre class="googlecode right" style="width:50%;">
+            <code class="cpp" style="font-size:0.81em;" data-trim>
+$ python
+>>>
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+          <pre class="googlecode right" style="width:50%;">
+            <code class="cpp" style="font-size:0.81em;" data-trim>
+$ python
+>>> a = 13
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+          <pre class="googlecode right" style="width:50%;">
+            <code class="cpp" style="font-size:0.81em;" data-trim>
+$ python
+>>> a = 13
+>>> print a
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <h3>인터프리터의 두가지 사용법</h3>
+          <pre class="github left" style="width:49%;">
+            <code class="python" data-trim>
+$ python pyramid.py
+// 실행됨
+            </code>
+          </pre>
+          <pre class="googlecode right" style="width:50%;">
+            <code class="cpp" style="font-size:0.81em;" data-trim>
+$ python
+>>> a = 13
+>>> print a
+13
+            </code>
+          </pre>
+        </section>
+
+        <section data-transition="none">
+          <img src="img/0.png" class="borderless">
+          <p><small>한쪽은 에디터 한쪽은 인터프리터</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/1.png" class="borderless">
+          <p><small>보통은 복사 붙여넣기 (혹은 ipython)</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/2.png" class="borderless">
+          <p><small>b에 값이 잘 저장되어있는가?</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/3.png" class="borderless">
+          <p><small>print b 로 쉽게 확인</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/4.png" class="borderless">
+          <p><small>print b+4 로 쉽게 확인</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/5.png" class="borderless">
+          <p><small>오류?!</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/6.png" class="borderless">
+          <p><small>오류의 원인을 찾기</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/7.png" class="borderless">
+          <p><small>다른 명령어 테스트</small></p>
+        </section>
+        <section data-transition="none">
+          <img src="img/8.png" class="borderless">
+          <p><small>개발과 테스트를 동시에</small></p>
+        </section>
+
         <section data-transition="zoom">
           <p><img class="borderless" src="img/fast.png"/></p>
           <p>실시간으로 결과를 확인하며 빠른  코딩</p>
-				</section>
-
-        <section>
-          <h3>다른 스크립트 언어들</h3>
-          <img style="width:22%" class="left" src="img/ruby.png">
-          <img style="width:37%" src="img/php.png">
-          <img style="width:32%" class="right" src="img/javascript.png">
 				</section>
 
         <section data-transition="linear">
@@ -231,7 +360,7 @@ row = gets.chomp
           <section>
             <h2>파이썬의 특징</h2>
             <ol>
-              <li class="fragment roll-in">읽기 쉽다</li>
+              <li class="fragment roll-in">코드가 읽기 쉽다</li>
               <li class="fragment roll-in">문법이 <b>간결</b>하다</li>
               <li class="fragment roll-in">개발속도가 <b>빠르다</b></li>
               <li class="fragment roll-in">프로그래밍이 <b>재밌다</b></li>
@@ -239,7 +368,7 @@ row = gets.chomp
           </section>
 
           <section>
-            <h2>1. 읽기 쉽다</h2>
+            <h2>1. 코드가 읽기 쉽다</h2>
             <pre class="github">
               <code class="python" data-trim>
 if "검색" is "구글":
@@ -461,8 +590,9 @@ cout << my_var << endl;
             <code class="transparent python" data-trim>
 my_var = 1
 my_string = "Hello"
+my_string2 = ' World!'
 
-print my_string + " World!"
+print my_string + my_string2
 
 my_var, my_string = my_string, my_var
             </code>
@@ -471,42 +601,11 @@ my_var, my_string = my_string, my_var
             <code class="transparent cpp" data-trim>
 int my_var = 1
 string my_string = "Hello"
+// impossible
 
 cout << my_string << " World!" << endl;
 
-// not possible
-            </code>
-          </pre>
-        </section>
-
-        <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
-          <h3 class="white left" style="margin-left: 220px">Python</h3>
-          <h3 class="white " style="margin-left: 95px">C++</h3>
-          <pre class="github left" style="margin-left: 0; width:50%;">
-            <code class="transparent python">
-
-
-my_list = ["apple", "banana", 3.14]
-my_list[0] = "I hate banana"
-
-
-my_dict = {"key": "value", "me": 23}
-
-my_dict["pi"] = "not a pie"
-            </code>
-          </pre>
-          <pre class="googlecode left" style="margin-left: 10px; width:48%;">
-            <code class="transparent cpp" data-trim>
-#include < map>
-
-// partially possible
-string my_list[2] = {"apple", "banana"};
-my_list[0] = "I hate banana";
-
-// partially possible
-map< string, int> my_dict = {"me": 23};
-
-// not possible
+// impossible
             </code>
           </pre>
         </section>
@@ -516,39 +615,90 @@ map< string, int> my_dict = {"me": 23};
           <h3 class="white " style="margin-left: 95px">C++</h3>
           <pre class="github left" style="margin-left: 0; width:50%;">
             <code class="transparent python" data-trim>
-nums = range(10)
+colors = ["red", "blue", "green"]
 
-print nums 
+colors[0] = "black"
+
+print colors[1]
+# blue
+            </code>
+          </pre>
+          <pre class="googlecode left" style="margin-left: 10px; width:48%;">
+            <code class="transparent cpp" data-trim>
+string colors[2] = {"red", "blue"};
+
+colors[0] = "black";
+
+cout << colors[1] << endl;
+// blue
+            </code>
+          </pre>
+          <img src="img/list.png">
+        </section>
+
+        <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 220px">Python</h3>
+          <h3 class="white " style="margin-left: 95px">C++</h3>
+          <pre class="github left" style="margin-left: 0; width:50%;">
+            <code class="transparent python">
+
+
+my_dict = {"me": 23, "girlfriend", "20"}
+
+print my_dict["me"]
+# 23
+            </code>
+          </pre>
+          <pre class="googlecode left" style="margin-left: 10px; width:48%;">
+            <code class="transparent cpp" data-trim>
+#include < map>
+
+// partially possible
+map< string, int> my_dict = {"me": 23};
+
+cout << my_dict["me"] << endl;
+// 23
+            </code>
+          </pre>
+          <img src="img/dict.png">
+        </section>
+
+        <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 220px">Python</h3>
+          <h3 class="white " style="margin-left: 95px">C++</h3>
+          <pre class="github left" style="margin-left: 0; width:50%;">
+            <code class="transparent python" data-trim>
+nums = range(10)
 // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+
 for num in nums:
-    if num in [3, 4, 7, 9]:
+    if num in [3, 6, 9]:
+        print "3의 배수 입니다"
         break
     else:
         continue
 
 while nums[1] == 1:
-    pass
+    print "무한 루프"
             </code>
           </pre>
           <pre class="googlecode left" style="margin-left: 9px; width:48%;">
             <code class="transparent cpp" style="font-size: 0.85em;" data-trim>
-#include < algorithm>
-
 int nums[10];
 for (int i=0; i<10; i++)
     nums[i] = i;
 
-cout << nums << endl;
-// 0x7fff59c965a0
-
-int size=sizeof(nums)/sizeof(*nums);
 for (int i=0; i < size; i++) {
-    if (find(nums, nums+size, i) != nums+size) {
+    if (i % 3 == 0)
+        cout << "3의 배수입니다" << endl;
         break;
     else
-        continue;
+        continue
 }
+
+while (nums[1] == 1)
+    cout << "무한 루프" << endl;
             </code>
           </pre>
         </section>
