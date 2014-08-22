@@ -49,6 +49,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <section>
+          <small>제 1회 D2 대학생 세미나</small>
 					<h1>140분의 Python</h1>
 					<h3>소개부터 문법, 실습까지</h3>
 					<p>
@@ -93,14 +94,14 @@ while(me.awake()):
 
         <section>
           <h2>Python의 아버지</h2>
-          <p>
+          <p class="fragment" data-fragment-index="0">
             <img width="200px;" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Guido_van_Rossum_OSCON_2006.jpg/640px-Guido_van_Rossum_OSCON_2006.jpg">
           </p>
-          <p>귀도 반 로섬</p>
-          <p><small><em>
+          <p class="fragment" data-fragment-index="0">귀도 반 로섬</p>
+          <p class="fragment" data-fragment-index="0"><small><em>
             1991년 크리스마스에 할거 없어서 만듦
           </em></small></p>
-          <small>
+          <small class="fragment" data-fragment-index="0">
             (제가 한살 더 어려요ㅋ)
           </small>
 				</section>
@@ -109,7 +110,7 @@ while(me.awake()):
           <p>
             <img width="563px;" src="http://theredlist.com/media/database/films/tv-series/comedy-and-romance/1970/monty-python-flying-circus/011-monty-python-flying-circus-theredlist.jpg">
           </p>
-          <p><small>귀도가 평소에 좋아하는 코메디 프로그램 "Monty Python's Flying Circus"에서 유래</small></p>
+          <p class="fragment" data-fragment-index="0"><small>귀도가 평소에 좋아하는 코메디 프로그램 "<a href="http://en.wikipedia.org/wiki/Monty_Python's_Flying_Circus">Monty Python's Flying Circus</a>"에서 유래</small></p>
 				</section>
 
         <section data-transition="fade">
@@ -169,7 +170,7 @@ python pyramid.py
 				<section data-transition="linear" data-background="#272822" data-background-transition="slide">
           <pre class="monokai">
             <code class="transparent cpp" data-trim>
-#include <iostream>
+#include < iostream>
 using namespace std;
 
 int main() {
@@ -186,8 +187,6 @@ int main() {
         cout << endl;
     }
 }
-
-// test
             </code>
           </pre>
 				</section>
@@ -224,13 +223,13 @@ for i in range(row):
             <small><em>라고 쓰고 "읽기 쉽다" 라고 읽는다</em></small>
             <pre class="zenburn">
               <code class="python" data-trim>
-if "여친" not in ["김태희", "천송이", "공효진"]:
-    print "여친이 없습니다"
-
 if "검색" is "구글":
     print "개발자"
 else:
     print "일반인"
+
+if "여친" not in ["김태희", "천송이", "공효진"]:
+    print "여친이 없습니다"
               </code>
             </pre>
           </section>
@@ -255,7 +254,7 @@ for lang in langs:
 #include < algorithm>
 string langs[3] = ["python","c++","java"];
 
-int size=sizeof(langs)/sizeof(*langs);
+int size = sizeof(langs)/sizeof(*langs);
 for (int i=0; i < size; i++) {
     if (find(nums, nums+size, i) != nums+size) {
         cout << langs[i] << " is good" << endl;
@@ -310,23 +309,14 @@ for (int i=0; i < size; i++) {
             <a href="https://github.com/carpedm20/movietag">
               <img class="left" width="52%" src="img/movietag.png">
             </a>
-            <a href-"https://github.com/carpedm20/movieduk">
+            <a href="https://github.com/carpedm20/movieduk">
               <img class="right" width="43%" src="img/movieduk.png">
             </a>
           </section>
 
           <section>
-            <a href="https://github.com/carpedm20/ndrive">
-              <img style="margin-left: 37px" class="left" width="43%" src="img/ndrive_doc.png">
-            </a>
-            <a href-"https://github.com/carpedm20/korail2">
-              <img class="" width="46%" src="img/korail2.png">
-            </a>
-            <a href="https://github.com/carpedm20/line">
-              <img style="margin-left: 37px"class="left" width="43%" src="img/line.png">
-            </a>
-            <a href-"https://github.com/carpedm20/emoji">
-              <img class="" width="46%" src="img/emoji.png">
+            <a href="https://github.com/carpedm20/emoji">
+              <img src="img/emoji.png">
             </a>
           </section>
         <!--</section>-->
@@ -334,7 +324,7 @@ for (int i=0; i < size; i++) {
         <section data-transition="fade">
           <h2>라이브러리</h2>
           <p>파이썬을 <b>즐기는</b> 개발자들이 이미 짠 코드</p>
-          <p><small><em>즉, 내가 만들고 싶은것에만 집중할 수 있다</em></small></p>
+          <p><small><em>즉, 내가 <b>만들고 싶은것</b>에만 집중할 수 있다</em></small></p>
           <img src="img/pip.png">
         </section>
 
@@ -361,6 +351,8 @@ for (int i=0; i < size; i++) {
         </section>
 
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 230px">Python</h3>
+          <h3 class="white " style="margin-left: 35px">C++</h3>
           <pre class="zenburn left" style="margin-left: 210px; width:20%;">
             <code class="transparent python" data-trim>
 my_var = 3
@@ -384,6 +376,8 @@ cout << my_var << endl;
         </section>
 
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 220px">Python</h3>
+          <h3 class="white " style="margin-left: 95px">C++</h3>
           <pre class="zenburn left" style="margin-left: 20px; width:45%;">
             <code class="transparent python" data-trim>
 my_var = 1
@@ -407,6 +401,8 @@ cout << my_string << " World!" << endl;
         </section>
 
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 220px">Python</h3>
+          <h3 class="white " style="margin-left: 95px">C++</h3>
           <pre class="zenburn left" style="margin-left: 0; width:50%;">
             <code class="transparent python" data-trim>
 my_list = ["apple", "banana", 3.14]
@@ -444,6 +440,8 @@ cout << my_dict["pi"] << endl;
         </section>
 
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
+          <h3 class="white left" style="margin-left: 220px">Python</h3>
+          <h3 class="white " style="margin-left: 95px">C++</h3>
           <pre class="zenburn left" style="margin-left: 0; width:50%;">
             <code class="transparent python" data-trim>
 nums = range(10)
@@ -484,6 +482,7 @@ for (int i=0; i < size; i++) {
         </section>
 
 				<section data-transition="linear" data-background="#3f3f3f" data-background-transition="fade">
+          <h3 class="white" style="margin-bottom:0px;">Python</h3>
           <pre class="zenburn">
             <code class="transparent">
 def sum(numbers = [1,2,3]):
