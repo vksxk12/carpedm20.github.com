@@ -23,8 +23,9 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/default.css">
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<link rel="stylesheet" href="lib/css/monokai.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+		<link rel="stylesheet" href="lib/css/googlecode.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -57,15 +58,13 @@
 					</p>
 				</section>
 
-				<section data-transition="linear" data-background="#3f3f3f" data-background-transition="slide">
-          <pre class="zenburn" style="width:70%;">
-            <code class="python" style="font-size:1.5em;" data-trim>
-me = Person()
-
-while(me.awake()):
-  me.hack()
-            </code>
-          </pre>
+				<section data-transition="linear" data-background-transition="slide">
+          <img class="left" style="margin-left:100px; width:30%;" src="img/me2.png">
+          <ul class="quite-li" style="margin-left: 0px; margin-top:110px; line-height: 3em;">
+            <li>해킹 동아리 HeXA 전 회장</li>
+            <li>파이썬 덕후</li>
+            <li>취미는 해킹</li>
+          </ul>
         </section>
 
 				<section>
@@ -76,20 +75,11 @@ while(me.awake()):
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Python이란?</h2>
-            <img src="img/dictionary.png"/>
-					</section>
-				</section>
-
         <section data-background="img/snake.jpg">
 				</section>
 
         <section data-transition="fade">
           <img width="700px;" class="borderless" src="img/python.png">
-          <p><small><em>비단뱀 아니라고 합니다</em></small></p>
 				</section>
 
         <section>
@@ -99,18 +89,15 @@ while(me.awake()):
           </p>
           <p class="fragment" data-fragment-index="0">귀도 반 로섬</p>
           <p class="fragment" data-fragment-index="0"><small><em>
-            1991년 크리스마스에 할거 없어서 만듦
+            1991년 크리스마스에 할거 없어서 만들었다고...
           </em></small></p>
-          <small class="fragment" data-fragment-index="0">
-            (제가 한살 더 어려요ㅋ)
-          </small>
 				</section>
 
         <section>
           <p>
             <img width="563px;" src="http://theredlist.com/media/database/films/tv-series/comedy-and-romance/1970/monty-python-flying-circus/011-monty-python-flying-circus-theredlist.jpg">
           </p>
-          <p class="fragment" data-fragment-index="0"><small>귀도가 평소에 좋아하는 코메디 프로그램 "<a href="http://en.wikipedia.org/wiki/Monty_Python's_Flying_Circus">Monty Python's Flying Circus</a>"에서 유래</small></p>
+          <p><small>귀도가 평소에 좋아하는 코메디 프로그램 "<a href="http://en.wikipedia.org/wiki/Monty_Python's_Flying_Circus">Monty Python's Flying Circus</a>"에서 유래</small></p>
 				</section>
 
         <section data-transition="fade">
@@ -123,13 +110,13 @@ while(me.awake()):
 				</section>
 
         <section>
-          <pre class="monokai">
+          <pre class="googlecode">
             <code class="bash" data-trim>
 vi pyramid.cpp
 g++ pyramid.cpp -o pyramid
 ./pyramid
           </code></pre>
-          <pre class="zenburn">
+          <pre class="github">
             <code class="bash" data-trim>
 vi pyramid.py
 python pyramid.py
@@ -154,12 +141,32 @@ python pyramid.py
               <h2><b>빠르게</b> 고친다</h2>
             </li>
 					</ul>
+          <p class="fragment roll-in" data-fragment-index="3"><small><em>(feat. 파이썬 인터프리터)</em></small></p>
 				</section>
+
+        <section>
+          <h2>컴파일러</h2>
+          <div class="fragment" data-fragment-index="0">
+            <p>코드를 컴퓨터에서 즉시 실행될 수 있는 형태의</p>
+            <p><b>실행 파일</b>로 바꾸어 주는 프로그램.</p>
+          </div>
+          <br/>
+          <h2>인터프리터</h2>
+          <div class="fragment" data-fragment-index="1">
+            <p>코드를 <b>한 줄씩 읽어</b>들여서 실행하는 프로그램</p>
+          </div>
+        </section>
 
         <section data-transition="zoom">
           <p><img class="borderless" src="img/fast.png"/></p>
-          <p>빠른  코딩</p>
-          <p><small><em>(feat. 파이썬 인터프린터)</em></small></p>
+          <p>실시간으로 결과를 확인하며 빠른  코딩</p>
+				</section>
+
+        <section>
+          <h3>다른 스크립트 언어들</h3>
+          <img style="width:22%" class="left" src="img/ruby.png">
+          <img style="width:37%" src="img/php.png">
+          <img style="width:32%" class="right" src="img/javascript.png">
 				</section>
 
         <section data-transition="linear">
@@ -167,8 +174,9 @@ python pyramid.py
           <p>피라미드를 만들어 볼까요?</p>
         </section>
 
-				<section data-transition="linear" data-background="#272822" data-background-transition="slide">
-          <pre class="monokai">
+				<section data-transition="linear" data-background="#fff" data-background-transition="slide">
+          <h2>C++</h2>
+          <pre class="googlecode">
             <code class="transparent cpp" data-trim>
 #include < iostream>
 using namespace std;
@@ -191,13 +199,25 @@ int main() {
           </pre>
 				</section>
 
-				<section data-transition="linear" data-background="#3f3f3f" data-background-transition="slide">
-          <pre class="zenburn">
+				<section data-transition="linear" data-background="#f8f8f8" data-background-transition="slide">
+          <h2>Python</h2>
+          <pre class="github">
             <code class="transparent python" data-trim>
 row = int(raw_input("row : "))
 
 for i in range(row):
     print " " * (row - i) + "*" * (2 * i + 1)
+            </code>
+          </pre>
+				</section>
+
+				<section data-transition="linear" data-background="#f8f8f8" data-background-transition="slide">
+          <h2>Ruby</h2>
+          <pre class="github">
+            <code class="transparent python" data-trim>
+row = gets.chomp
+
+1.upto(w) { |i| puts " "*(w-i)+"*"*(i*2-1) }
             </code>
           </pre>
 				</section>
@@ -211,17 +231,16 @@ for i in range(row):
           <section>
             <h2>파이썬의 특징</h2>
             <ol>
-              <li class="fragment roll-in">인간적인 언어이다</li>
-              <li class="fragment roll-in">간결하다</li>
+              <li class="fragment roll-in">읽기 쉽다</li>
+              <li class="fragment roll-in">문법이 <b>간결</b>하다</li>
               <li class="fragment roll-in">개발속도가 <b>빠르다</b></li>
               <li class="fragment roll-in">프로그래밍이 <b>재밌다</b></li>
             </ol>
           </section>
 
           <section>
-            <h2>1. 인간적인 언어이다</h2>
-            <small><em>라고 쓰고 "읽기 쉽다" 라고 읽는다</em></small>
-            <pre class="zenburn">
+            <h2>1. 읽기 쉽다</h2>
+            <pre class="github">
               <code class="python" data-trim>
 if "검색" is "구글":
     print "개발자"
@@ -235,10 +254,10 @@ if "여친" not in ["김태희", "천송이", "공효진"]:
           </section>
 
           <section>
-            <h2> 2. 간결하다</h2>
+            <h2> 2. 문법이 <b>간결</b>하다</h2>
             <small><em>라고 쓰고 "우아하다" 라고 읽는다</em></small>
             <br/>
-            <pre class="zenburn left" style="width:49%;">
+            <pre class="github left" style="width:49%;">
               <code class="python" data-trim>
 langs = ['python', 'c++', 'java']
 
@@ -249,7 +268,7 @@ for lang in langs:
         print lang + " is not fun"
                 </code>
               </pre>
-            <pre class="monokai right" style="width:50%;">
+            <pre class="googlecode right" style="width:50%;">
               <code class="cpp" style="font-size:0.81em;" data-trim>
 #include < algorithm>
 string langs[3] = ["python","c++","java"];
@@ -268,7 +287,8 @@ for (int i=0; i < size; i++) {
 
           <section>
             <h3>3. 개발속도가 빠르다</h3>
-            <h2>Life is too short, You need python.</h2>
+            <h2></h2>
+            <h2>Life is too short, you need python.</h2>
           </section>
 
           <section>
@@ -281,6 +301,65 @@ for (int i=0; i < size; i++) {
             </em></small></p>
           </section>
         <!--</section>-->
+
+        <section>
+          <h2>그러면 파이썬은 장점만 있나?</h2>
+          <p>C++은 쓸 필요가 없는건가?</p>
+        </section>
+
+        <section>
+          <h3>가장 큰 단점</h3>
+          <h2 class="fragment" data-fragment-index="0">느리다</h2>
+          <img src="img/slow.png" class="fragment" data-fragment-index="0">
+          <p class="fragment" data-fragment-index="0"><small><em>
+            출처 : <a href="http://helloworld.naver.com/helloworld/1114">메일 서비스 파이썬 적용 경험 (NAVER 개발자 블로그)</a>
+          </em></small></p>
+        </section>
+
+        <section>
+          <h2>느린 이유</h2>
+          <ul class="quite-li">
+            <li class="fragment" data-fragment-index="0">1. 동적 타입</li>
+            <li class="fragment" data-fragment-index="0">
+              <img src="img/add.png">
+            </li>
+            <li class="fragment" data-fragment-index="1">2. 코드 최적화의 부족</li>
+          </ul>
+          <div class="fragment" data-fragment-index="1">
+            <pre class="googlecode left" style="margin-left: 40px; width:45%;">
+              <code class="cpp" data-trim>
+main() {
+    long i;
+    double x;
+
+    for( i=0; i<100000; i++) {
+        x = sin(.3)
+    }
+
+    printf("%ld\n", i);
+}
+              </code>
+            </pre>
+            <pre class="googlecode right" style="width:45%;">
+              <code class="cpp" data-trim>
+main() {
+    long i = 100000;
+    printf("%ld\n", i);
+}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>그래도 파이썬을 쓰는 이유는?</h3>
+          <div class="fragment" data-fragment-index="0">
+          <h1>생산성</h1>
+          <img src="img/linenos.png">
+          <p><em><small>상대적으로 쉬운 문법 덕분에, 생각을 코드로 쉽게 표현할 수 있다</small></em></p>
+          <p><small><em>
+            출처 : <a href="http://helloworld.naver.com/helloworld/1114">메일 서비스 파이썬 적용 경험 (NAVER 개발자 블로그)</a>
+          </em></small></p>
+        </section>
 
         <section>
           <h2>파이썬으로 무엇을 할 수 있을까?</h2>
@@ -353,7 +432,7 @@ for (int i=0; i < size; i++) {
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
           <h3 class="white left" style="margin-left: 230px">Python</h3>
           <h3 class="white " style="margin-left: 35px">C++</h3>
-          <pre class="zenburn left" style="margin-left: 210px; width:20%;">
+          <pre class="github left" style="margin-left: 210px; width:20%;">
             <code class="transparent python" data-trim>
 my_var = 3
 
@@ -363,7 +442,7 @@ my_var -= 1
 print my_var
             </code>
           </pre>
-          <pre class="monokai left" style="margin-left: 190px; width:30%;">
+          <pre class="googlecode left" style="margin-left: 190px; width:30%;">
             <code class="transparent cpp" data-trim>
 int my_var = 3
 
@@ -378,7 +457,7 @@ cout << my_var << endl;
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
           <h3 class="white left" style="margin-left: 220px">Python</h3>
           <h3 class="white " style="margin-left: 95px">C++</h3>
-          <pre class="zenburn left" style="margin-left: 20px; width:45%;">
+          <pre class="github left" style="margin-left: 20px; width:45%;">
             <code class="transparent python" data-trim>
 my_var = 1
 my_string = "Hello"
@@ -388,7 +467,7 @@ print my_string + " World!"
 my_var, my_string = my_string, my_var
             </code>
           </pre>
-          <pre class="monokai left" style="margin-left: 52px; width:46%;">
+          <pre class="googlecode left" style="margin-left: 52px; width:46%;">
             <code class="transparent cpp" data-trim>
 int my_var = 1
 string my_string = "Hello"
@@ -403,21 +482,20 @@ cout << my_string << " World!" << endl;
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
           <h3 class="white left" style="margin-left: 220px">Python</h3>
           <h3 class="white " style="margin-left: 95px">C++</h3>
-          <pre class="zenburn left" style="margin-left: 0; width:50%;">
-            <code class="transparent python" data-trim>
+          <pre class="github left" style="margin-left: 0; width:50%;">
+            <code class="transparent python">
+
+
 my_list = ["apple", "banana", 3.14]
 my_list[0] = "I hate banana"
 
-print my_list
-# ['I hate banana', 'banana', 3.14]
 
-my_dict = {"key": "value", "pi": 3.14}
+my_dict = {"key": "value", "me": 23}
 
-print my_dict["pi"]
-# 3.14
+my_dict["pi"] = "not a pie"
             </code>
           </pre>
-          <pre class="monokai left" style="margin-left: 10px; width:48%;">
+          <pre class="googlecode left" style="margin-left: 10px; width:48%;">
             <code class="transparent cpp" data-trim>
 #include < map>
 
@@ -425,16 +503,10 @@ print my_dict["pi"]
 string my_list[2] = {"apple", "banana"};
 my_list[0] = "I hate banana";
 
-cout << my_list << endl;
-// 0x7fff5d962650
-
 // partially possible
-map< string, double> my_list;
+map< string, int> my_dict = {"me": 23};
 
-my_dict["pi"] = 3.14;
-
-cout << my_dict["pi"] << endl;
-// 3.14
+// not possible
             </code>
           </pre>
         </section>
@@ -442,7 +514,7 @@ cout << my_dict["pi"] << endl;
         <section data-transition="linear" data-background="img/background_half.png" data-background-transition="slide">
           <h3 class="white left" style="margin-left: 220px">Python</h3>
           <h3 class="white " style="margin-left: 95px">C++</h3>
-          <pre class="zenburn left" style="margin-left: 0; width:50%;">
+          <pre class="github left" style="margin-left: 0; width:50%;">
             <code class="transparent python" data-trim>
 nums = range(10)
 
@@ -459,7 +531,7 @@ while nums[1] == 1:
     pass
             </code>
           </pre>
-          <pre class="monokai left" style="margin-left: 9px; width:48%;">
+          <pre class="googlecode left" style="margin-left: 9px; width:48%;">
             <code class="transparent cpp" style="font-size: 0.85em;" data-trim>
 #include < algorithm>
 
@@ -481,11 +553,11 @@ for (int i=0; i < size; i++) {
           </pre>
         </section>
 
-				<section data-transition="linear" data-background="#3f3f3f" data-background-transition="fade">
+				<section data-transition="linear" data-background="#f8f8f8" data-background-transition="fade">
           <h3 class="white" style="margin-bottom:0px;">Python</h3>
-          <pre class="zenburn">
+          <pre class="github">
             <code class="transparent">
-def sum(numbers = [1,2,3]):
+def sum(numbers = [1, 2, 3]):
     if -1 in numbers:
         return False
     else:
@@ -497,7 +569,7 @@ def sum(numbers = [1,2,3]):
         return ans
 
 print sum() // 6
-print sum(range(10)) // 45
+print sum([1, 3, 5, 7, 9]) // 25
 if sum([-1, 3]):
     print "나라가 허락한 유일한 마약, 파이썬..."
             </code>
@@ -530,6 +602,7 @@ if sum([-1, 3]):
           <ul>
             <li><a href="https://wikidocs.net/book/1">점프 투 파이썬</a></li>
             <li><a href="http://mearie.org/documents/how-not-to-teach-python/seminar.pdf">발로 하는 파이썬 세미나</a></li>
+            <li><a href="https://medium.com/@cookatrice/why-python-is-slow-looking-under-the-hood-7126baf936d7">파이썬 느린 이유 내부 원리</a></li>
             <li><a href="http://www.stavros.io/tutorials/python/">Learn Python in 10 minutes</a></li>
           </ul>
         </section>
