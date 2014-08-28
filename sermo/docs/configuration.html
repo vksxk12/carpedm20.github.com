@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; sermo documentation 0.1.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="top" title="sermo documentation 0.1.5 documentation" href="../index.html" />
+    <link rel="next" title="시작하기" href="installation_ko.html" />
+    <link rel="prev" title="Getting started" href="installation.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body>
+  
+  
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation_ko.html" title="시작하기"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Getting started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">sermo documentation 0.1.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Sermo has <em>Client</em> and <em>Server</em> side configuration and both of them are important before you start to host your Sermo server.</p>
+<div class="section" id="client-for-each-site">
+<h2>Client (for each site)<a class="headerlink" href="#client-for-each-site" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="of-comments-per-page">
+<h3># of comments per page<a class="headerlink" href="#of-comments-per-page" title="Permalink to this headline">¶</a></h3>
+<p>You can set the # (number) of comments per page. The default value is 10.</p>
+</div>
+<div class="section" id="comment-length">
+<h3>Comment length<a class="headerlink" href="#comment-length" title="Permalink to this headline">¶</a></h3>
+<p>You can limit the <em>maximum</em> and <em>minimum</em> length of comments for each sites.</p>
+</div>
+<div class="section" id="black-list">
+<h3>Black list<a class="headerlink" href="#black-list" title="Permalink to this headline">¶</a></h3>
+<p>If you want to make one user as a black list, go to <em>Manage comments</em> page and set an account as a black list. You can remove an account from black list at <em>Site detail</em> page.</p>
+</div>
+<div class="section" id="ban-words">
+<h3>Ban words<a class="headerlink" href="#ban-words" title="Permalink to this headline">¶</a></h3>
+<p>You can also set ban words for each web site. If you want to set huge words set as ban words, you can save it as a <em>csv</em> file and upload it! In this case, you have two options, one is delete original ban words and renew it or the other is add ban words to original ban words.</p>
+</div>
+</div>
+<div class="section" id="server">
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
+<p>There are various options you can set before you start your Sermo server. All of below configurations should be assigned in <em>config.py</em> file.</p>
+<div class="section" id="server-domain-and-port">
+<h3>Server domain and port<a class="headerlink" href="#server-domain-and-port" title="Permalink to this headline">¶</a></h3>
+<p>Sermo is a clone of famous social comment platform <a class="reference external" href="https://disqus.com/">Disqus</a>, but you want to run Sermo on your server, you should set server domain and port number. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SERVER_ADDR</span> <span class="o">=</span> <span class="s">&quot;repl.ajaxui.org&quot;</span>
+<span class="n">SERVER_PORT</span> <span class="o">=</span> <span class="s">&quot;8000&quot;</span>
+</pre></div>
+</div>
+<p>Instead, you can set <em>SERVER ADDR</em> with your external IP address.</p>
+</div>
+<div class="section" id="comment-theme">
+<h3>Comment theme<a class="headerlink" href="#comment-theme" title="Permalink to this headline">¶</a></h3>
+<p>Below is configurations which is related to theme of Sermo:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">COMMENT_PER_PAGE</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">THEME_CSS</span> <span class="o">=</span> <span class="s">&#39;default/comment.css&#39;</span>
+<span class="n">THEME_COMMNET</span> <span class="o">=</span> <span class="s">&#39;default/comment.html&#39;</span>
+<span class="n">THEME_COMMNETS</span> <span class="o">=</span> <span class="s">&#39;default/comments.html&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="social-login">
+<h3>Social login<a class="headerlink" href="#social-login" title="Permalink to this headline">¶</a></h3>
+<p>Users can write a comments only by using social logins. (But admin can write a comment without any social logins)</p>
+<p>Belows are the list of social networks:</p>
+<ul class="simple">
+<li>Naver</li>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>Google</li>
+</ul>
+<ol class="arabic simple">
+<li>Naver social auth</li>
+</ol>
+<p>You should get a client id and sercret key from <a class="reference external" href="http://developer.naver.com/wiki/pages/OpenAPI">NAVER developer center</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">NAVER_CLIENT_ID</span>     <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxxxxxxx&#39;</span>
+<span class="n">NAVER_CLIENT_SECRET</span> <span class="o">=</span> <span class="s">&#39;xxxxxxxxxx&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Facebook social auth</li>
+</ol>
+<p>You can get Facebook app id and API secret key from <a class="reference external" href="https://developers.facebook.com/">Facebook Developers</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">FACEBOOK_APP_ID</span>     <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxx&#39;</span>
+<span class="n">FACEBOOK_API_SECRET</span> <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Twitter social auth</li>
+</ol>
+<p>You can get Twitter key and secret key from <a class="reference external" href="https://dev.twitter.com/">Twitter Developers</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TWITTER_CONSUMER_KEY</span>    <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span>
+<span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Google social auth</li>
+</ol>
+<p>You can get Google client id and client secret key from <a class="reference external" href="https://console.developers.google.com/project">Google developer console</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">GOOGLE_OAUTH2_CLIENT_ID</span>     <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com&#39;</span>
+<span class="n">GOOGLE_OAUTH2_CLIENT_SECRET</span> <span class="o">=</span> <span class="s">&#39;xxxxxxxxxxxxxxxxxxxxxxxx&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+    <a href="../index.html">
+        <img src="../_static/logo.png" width="200px"/>
+    </a>
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#client-for-each-site">Client (for each site)</a><ul>
+<li><a class="reference internal" href="#of-comments-per-page"># of comments per page</a></li>
+<li><a class="reference internal" href="#comment-length">Comment length</a></li>
+<li><a class="reference internal" href="#black-list">Black list</a></li>
+<li><a class="reference internal" href="#ban-words">Ban words</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#server">Server</a><ul>
+<li><a class="reference internal" href="#server-domain-and-port">Server domain and port</a></li>
+<li><a class="reference internal" href="#comment-theme">Comment theme</a></li>
+<li><a class="reference internal" href="#social-login">Social login</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Getting started</a></li>
+      <li>Next: <a href="installation_ko.html" title="next chapter">시작하기</a></li>
+  </ul></li>
+</ul>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/configuration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  <h3>Useful links:</h3>
+  <ul>
+    <li><a href="https://github.com/carpedm20/sermo">Github Repo</a></li>
+    <li><a href="https://github.com/carpedm20/sermo/issues">Issue Tracker</a></li>
+  </ul>
+  
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2014, NAVER.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  
+  </body>
+</html>

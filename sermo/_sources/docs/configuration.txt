@@ -1,0 +1,119 @@
+Configuration
+=============
+
+Sermo has *Client* and *Server* side configuration and both of them are important before you start to host your Sermo server.
+
+
+Client (for each site)
+----------------------
+
+
+# of comments per page
+~~~~~~~~~~~~~~~~~~~~~
+
+You can set the # (number) of comments per page. The default value is 10.
+
+Comment length
+~~~~~~~~~~~~~~
+
+You can limit the *maximum* and *minimum* length of comments for each sites. 
+
+Black list
+~~~~~~~~~~
+
+If you want to make one user as a black list, go to *Manage comments* page and set an account as a black list. You can remove an account from black list at *Site detail* page.
+
+Ban words
+~~~~~~~~~
+
+You can also set ban words for each web site. If you want to set huge words set as ban words, you can save it as a *csv* file and upload it! In this case, you have two options, one is delete original ban words and renew it or the other is add ban words to original ban words.
+
+
+Server
+------
+
+There are various options you can set before you start your Sermo server. All of below configurations should be assigned in *config.py* file.
+
+
+Server domain and port
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Sermo is a clone of famous social comment platform `Disqus`_, but you want to run Sermo on your server, you should set server domain and port number. For example:
+
+.. code-block:: python
+
+   SERVER_ADDR = "repl.ajaxui.org"
+   SERVER_PORT = "8000"
+
+Instead, you can set *SERVER ADDR* with your external IP address.
+
+
+Comment theme
+~~~~~~~~~~~~~
+
+Below is configurations which is related to theme of Sermo:
+
+.. code-block:: python
+
+   COMMENT_PER_PAGE = 10
+
+   THEME_CSS = 'default/comment.css'
+   THEME_COMMNET = 'default/comment.html'
+   THEME_COMMNETS = 'default/comments.html'
+
+
+Social login
+~~~~~~~~~~~~
+
+Users can write a comments only by using social logins. (But admin can write a comment without any social logins)
+
+Belows are the list of social networks:
+
+- Naver
+- Facebook
+- Twitter
+- Google
+
+1. Naver social auth
+
+You should get a client id and sercret key from `NAVER developer center`_.
+
+.. code-block:: python
+
+   NAVER_CLIENT_ID     = 'xxxxxxxxxxxxxxxxxxxx'
+   NAVER_CLIENT_SECRET = 'xxxxxxxxxx'
+
+2. Facebook social auth
+
+You can get Facebook app id and API secret key from `Facebook Developers`_.
+
+.. code-block:: python
+
+   FACEBOOK_APP_ID     = 'xxxxxxxxxxxxxxx'
+   FACEBOOK_API_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+3. Twitter social auth
+
+You can get Twitter key and secret key from `Twitter Developers`_.
+
+.. code-block:: python
+
+   TWITTER_CONSUMER_KEY    = 'xxxxxxxxxxxxxxxxxxxxxxxxx'
+   TWITTER_CONSUMER_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+3. Google social auth
+
+You can get Google client id and client secret key from `Google developer console`_.
+
+.. code-block:: python
+
+   GOOGLE_OAUTH2_CLIENT_ID     = 'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'
+   GOOGLE_OAUTH2_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+
+
+.. _NAVER developer center: http://developer.naver.com/wiki/pages/OpenAPI
+.. _Facebook Developers: https://developers.facebook.com/
+.. _Twitter Developers: https://dev.twitter.com/
+.. _Google developer console: https://console.developers.google.com/project
+
+.. _Disqus: https://disqus.com/
