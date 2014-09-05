@@ -1,0 +1,74 @@
+시작하기
+========
+
+Sermo가 대부분의 개발 환경, 즉 Linux에서 뿐만 아니라 Windows와 Mac에서도 제대로 작동할 수 있도록 아래의 가이드 라인을 따라서 설치해 주시기 바랍니다.
+
+
+요구사항
+--------
+
+**Sermo** 는 `Django`_ 를 기반으로 작성되었으며 Linux 환경에서 작동되도록 최적화 되어 있습니다. Sermo 를 실행할 때 필요로하는 라이브러리는 *requirements.txt* 파일 안에 작성되어 있으며, 가상 환경을 만들어서 쉽게 설치하실 수 있습니다. 여러분들은 아래와 같은 환경을 필요로 합니다:
+
+- Python 2.6, 2.7 or 3.3+ (+ devel headers)
+- pip
+- virtualenv
+- SQLite 3.3.8 or later
+
+
+빠른 설치
+---------
+
+먼저, Sermo 프로젝트의 clone 을 받습니다:
+
+.. code-block:: bash
+
+   $ git clone https://github.com/naver/sermo.git
+   $ cd sermo
+
+가상 환경(virtualenv)을 만들기 위해서 아래의 명령어를 입력합니다:
+
+.. code-block:: bash
+
+   $ virtualenv .
+   $ source ./bin/activate
+
+ 
+이제 Sermo가 필요로 하는 의존성 라이브러리를 설치합니다:
+
+.. code-block:: bash
+
+   $ pip install -r requirements.txt
+
+그리고 여러분은 Sermo의 default 설정 파일을 복사해서, 필요에 따라 수정을 하셔야 합니다:
+
+.. code-block:: bash
+
+   $ cp config.py.default config.py
+
+마지막으로, django 명령어를 입력해서 Sermo 서버를 실행합니다:
+
+.. code-block:: bash
+
+   $ python manage.py syncdb
+   $ python manage.py runserver 0.0.0.0:8000
+
+
+네 이게 전부입니다! 이제 http://localhost:8000 로 접속하시면 로그인 페이지를 보실 수 있을겁니다.
+
+여러분은 당장 account를 만들 수 있지만, 복사했던 *config.py* 파일을 수정해서 Sermo 서버의 설정을 수정하셔야 합니다. (ex. 서버의 도메인 주소, 포트 숫자, 소셜 로그인을 위한 키...)
+
+설정에 대한 자세한 정보를 얻고싶으시면 :doc:`configuration` 를 참고하세요.
+
+
+테스팅 (진행 중...)
+-------------------
+
+**Sermo** 는 문제가 발생하는 것을 미연에 방지하기 위해 여러 테스트 케이스들이 있습니다. 또한, 여러분이 Sermo를 햌(hack)하거나 등록된 이슈들을 해결하고 싶으시다면, 여러분은 테스트 케이스를 돌려서 에러가 나는지를 꼭 확인해 보시길 바랍니다. Sermo를 테스트해보고 싶다면 아래의 명령어를 입력하시면 됩니다.
+
+.. code-block:: bash
+
+   $ virtualenv .
+   $ bin/pip install -r requirements.txt
+
+
+.. _Django: https://www.djangoproject.com/

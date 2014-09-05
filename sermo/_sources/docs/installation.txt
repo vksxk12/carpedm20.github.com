@@ -1,0 +1,73 @@
+Getting started
+==============
+
+Below are the most basic guide line to make sure Sermo works well not only on Linux and but also on  Windows and Mac as well but it may require some extra digging around configuration.
+
+
+Requirements
+------------
+
+**Sermo** is built on top of `Django`_ and optimized to run on a Linux environment. Sermo's Python requirements are all in the *requirements.txt* file and easily installable once you have up a virtual environment. What you need initially:
+
+- Python 2.6, 2.7 or 3.3+ (+ devel headers)
+- pip
+- virtualenv
+- SQLite 3.3.8 or later
+
+
+Quick installation
+------------------
+
+First, get a clone of Sermo:
+
+.. code-block:: bash
+
+   $ git clone https://github.com/naver/sermo.git
+   $ cd sermo
+
+To create a virtual environment (recommended), run:
+
+.. code-block:: bash
+
+   $ virtualenv .
+   $ source ./bin/activate
+
+Install Sermo and its dependencies:
+
+.. code-block:: bash
+
+   $ pip install -r requirements.txt
+
+Then you need to make your own configuration file, but if you want to test Sermo right way, run:
+
+.. code-block:: bash
+
+   $ cp config.py.default config.py
+
+Finally, run django commands to run your Sermo:
+
+.. code-block:: bash
+
+   $ python manage.py syncdb
+   $ python manage.py runserver 0.0.0.0:8000
+
+
+Thats it! If you enter http://localhost:8000 to your browser you will see a login page.
+
+You can make an account right away, but you need to change default configuration file to fully utilize the features of Sermo (like social login).
+
+Just click :doc:`quickstart`
+
+
+Testing (in progress)
+---------------------
+
+**Sermo** has many tests to make sure that any changes don't break anything. Also, if you want to hack on Sermo or track down issues, you'd better check these tests to ensure no errors will be occured. To run Sermo's tests inside the Sermo repo run:
+
+.. code-block:: bash
+
+   $ virtualenv .
+   $ bin/pip install -r requirements.txt
+
+
+.. _Django: https://www.djangoproject.com/

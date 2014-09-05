@@ -1,0 +1,112 @@
+sermo manual
+============
+
+.. raw:: html
+
+   <a name="english"></a>
+   <a href="#korean">[한국어]</a>
+
+Introduction
+------------
+
+*sermo* is an open source project for a installation type, cloud commenting system. Without bindings with any commercial service, you can host your own comment server.
+
+
+License
+-------
+
+Copyright 2014 NAVER Corp. under the BSD License
+
+
+Key Features
+------------
+
+* Social login (Naver, Facebook, Twitter, Google)
+* Threaded comments and replies
+* Powerful moderation and admin tools
+* Full spam filtering, blacklists and whitelists
+* Increased exposure and readership
+
+
+Quick start
+-----------
+
+.. code-block:: bash
+
+   $ git clone http://yobi.navercorp.com/carpedm20/sermo
+   $ cd sermo
+   $ pip install -r requirements.txt
+   $ python manage.py syncdb
+   $ cp config.py.default config.py
+   $ python manage.py runserver 0.0.0.0:8000
+
+
+Documentation
+-------------
+
+.. toctree::
+   :maxdepth: 3
+
+   docs/installation
+   docs/troubleshooting
+
+   docs/configuration
+
+   docs/features
+
+
+
+.. raw:: html
+
+   <br/>
+   <br/>
+   <br/>
+   <a name="korean"></a>
+   <a href="#english">[영어]</a>
+
+
+Sermo 소개
+----------
+
+*Sermo* 는 설치형 클라우드 댓글 시스템입니다. 어떠한 상업 서비스에 종속되지 않고 여러분의 댓글 서버를 호스팅 할 수 있습니다.
+
+
+라이선스
+--------
+
+Copyright 2014 NAVER Corp. under the BSD License
+
+
+주요 기능
+---------
+
+* 소셜 로그인 (네이버, 페이스북, 트위터, 구글)
+* 댓글 및 댓댓글 기능
+* 강력한 관리자 도구 및 다양한 설정
+* 스팸 필터링, 블랙 리스트 및 화이트 리스트 기능
+
+
+빠른 설치
+---------
+
+.. code-block:: bash
+
+   $ git clone http://yobi.navercorp.com/carpedm20/sermo
+   $ cd sermo
+   $ pip install -r requirements.txt
+   $ python manage.py syncdb
+   $ cp config.py.default config.py
+   $ python manage.py runserver 0.0.0.0:8000
+
+
+가이드
+------
+
+.. toctree::
+   :maxdepth: 3
+
+   docs/installation_ko
+   docs/configuration_ko
+
+   docs/features
+
