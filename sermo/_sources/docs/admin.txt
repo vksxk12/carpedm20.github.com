@@ -1,8 +1,0 @@
-Admin
-=====
-
-Features
---------
-
-1. Add sites
-2. Automatic thread creation
