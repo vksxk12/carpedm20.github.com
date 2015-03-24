@@ -32,11 +32,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
 
   </head>
-  <body>
+  <body role="document">
   
   
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -48,14 +48,14 @@
         <li class="right" >
           <a href="index.html" title="LINE manual"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">LINE api doc 0.1.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="line-episode-i-a-new-hope">
 <h1>LINE Episode I: A New Hope<a class="headerlink" href="#line-episode-i-a-new-hope" title="Permalink to this headline">¶</a></h1>
@@ -173,7 +173,7 @@ list of recent messages, use <cite>getRecentMessages</cite> method:</p>
 </pre></div>
 </div>
 <p>There are other methods in <cite>contact</cite>, <cite>rooms</cite> and <cite>group</cite> instances so I&#8217;ll
-recommend you to take a look at the <em class="xref std std-ref">models</em> section.</p>
+recommend you to take a look at the <span class="xref std std-ref">models</span> section.</p>
 </div>
 <div class="section" id="part-4-make-your-own-bot">
 <h2>Part 4: Make your own bot<a class="headerlink" href="#part-4-make-your-own-bot" title="Permalink to this headline">¶</a></h2>
@@ -241,7 +241,7 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
     <a href="index.html">
         <img src="_static/logo.png" width="200px"/>
@@ -264,11 +264,13 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
       <li>Next: <a href="api/client.html" title="next chapter">LineClient</a></li>
   </ul></li>
 </ul>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/tutorial.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
   <h3>Useful links:</h3>
   <ul>
     <li><a href="https://github.com/carpedm20/line">Github Repo</a></li>
@@ -319,7 +321,7 @@ message sent by other <cite>contact</cite>, <cite>room</cite> or <cite>group</ci
     </li>
   </ul>
   
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
