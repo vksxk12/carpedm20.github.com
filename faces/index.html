@@ -21,15 +21,9 @@ var clip_pixel = function(x){
   else return 255*(x+1.0)/2.0;
 }
 
-var draw_activations_COLOR = function(elt, A, scale, grads) {
+var draw_activations_COLOR = function(elt, A, scale) {
 
   var s = scale || 1; // scale
-  var draw_grads = false;
-  if(typeof(grads) !== 'undefined') draw_grads = grads;
-
-  // get max and min activation to scale the maps automatically
-  var w = draw_grads ? A.dw : A.w;
-  var mm = cnnutil.maxmin(w);
 
   var canv = document.createElement('canvas');
   canv.className = 'actmap';
@@ -42,12 +36,9 @@ var draw_activations_COLOR = function(elt, A, scale, grads) {
   for(var d=0;d<3;d++) {
     for(var x=0;x<A.sx;x++) {
       for(var y=0;y<A.sy;y++) {
-        if(draw_grads) {
-          var dval = Math.floor((A.get_grad(x,y,d)-mm.minv)/mm.dv*255);
-        } else {
-          //var dval = Math.floor((A.get(x,y,d)-mm.minv)/mm.dv*255);  
-          var dval = clip_pixel(A.get(x,y,d));  
-        }
+        //var dval = Math.floor((A.get(x,y,d)-mm.minv)/mm.dv*255);  
+        var dval = clip_pixel(A.get(x,y,d));  
+
         for(var dx=0;dx<s;dx++) {
           for(var dy=0;dy<s;dy++) {
             var pp = ((W * (y*s+dy)) + (dx + x*s)) * 4;
@@ -149,9 +140,6 @@ var draw_activations_COLOR = function(elt, A, scale, grads) {
 //        x.set(0,0,i,Math.random()*2.0-1.0);
 //        x.set(0,0,i,sliders[i].value/50.0-1.0);
           var z = strength[0].value/100.0*z0[i];
-          for(var j=0; j<num_tags; j++){
-            z += sliders[j].value/200.0 * zws['w'][j]['v'][i];
-          }
           if(z>1) z=1;
           else if(z<-1) z=-1;
           x.set(0,0,i,z);
