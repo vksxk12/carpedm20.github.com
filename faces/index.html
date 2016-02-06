@@ -32,6 +32,14 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="fakeLoader"></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=776839839027483";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -93,6 +101,7 @@
                 <h2>프사 뉴럴</h2>
                 <p><b>프사 뉴럴</b>은 Facebook AI Research에서 개발한 <a href="http://arxiv.org/pdf/1511.06434v2.pdf">Deep Convolutional Generative Adversarial Networks</a> (DCGAN) 이라는 기계 학습 모델을 사용해 만들어졌습니다.</p>
                 <p><b>프사 뉴럴</b>은 얼굴 사진을 만드는 인공 지능이며<br>이 페이지의 모든 사진은 <b>프사 뉴럴</b>이 만든 사진입니다.</p>
+                <div class="fb-like" data-href="http://carpedm20.github.io/faces/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
             </div>
         </div>
     </section>
@@ -201,6 +210,43 @@
         </div>
     </section>
 
+    <section id="results" class="content-section text-center">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Misc.</h2>
+                <p>마지막으로 튜링 테스트를 해 보겠습니다 :)<br>아래 사진들 중에 진짜 사진은 무엇일까요?</p>
+                <p><small>(마우스를 올리시면 정답이 보입니다)</small></p>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 turing-slick">
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t1.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f1.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f2.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f3.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t6.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f4.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f5.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f6.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t2.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f7.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t7.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f8.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f9.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f17.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t3.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f10.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f11.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f12.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f13.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t4.jpg"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f14.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f15.png"/>
+                <img data-container="body" data-toggle="tooltip" title="fake!" src="img/f16.png"/>
+                <img data-container="body" data-toggle="tooltip" title="true." src="img/t5.jpg"/>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
@@ -221,10 +267,18 @@
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/vendor/fakeLoader.min.js"></script>
+    <script>
+        getElementById("fakeLoader").fakeLoader({
+            zIndex:"999",//Default zIndex
+            spinner:"spinner3",
+            bgColor:"black"
+        });
+    </script>
+    
     <script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/vendor/jquery.easing.min.js"></script>
-    <script src="js/vendor/fakeLoader.min.js"></script>
     <script src="js/vendor/pixel.min.js"></script>
 
     <script src="js/convnet.js"></script>
