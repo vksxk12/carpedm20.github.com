@@ -16,7 +16,7 @@ var get_pixels = function() {
             if (frame[i][j] == "rgba(0, 0, 0, 0)") {
                 x[idx] = 0;
             } else {
-                x[idx] = parseInt(frame[i][j].substring(1));
+                x[idx] = parseInt(frame[i][j].substring(1,3) ,16)/255;
             }
         }
     }
@@ -58,7 +58,7 @@ $(document).ready(function() {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -73,7 +73,7 @@ $(document).ready(function() {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
@@ -116,6 +116,8 @@ $(document).ready(function() {
         var ctx = canv.getContext("2d");
         var g = ctx.createImageData(W, H);
 
+        pixels = get_pixels();
+
         for(var d=0; d < 3; d++) {
             for(var x=0; x < output.sx; x++) {
                 for(var y=0; y < output.sy; y++) {
@@ -124,7 +126,7 @@ $(document).ready(function() {
                     for(var dx = 0; dx < scale; dx++) {
                         for(var dy =0 ;dy < scale; dy++) {
                             var pp = ((W * (y*scale + dy)) + (dx + x*scale)) * 4;
-                            g.data[pp + d] = dval;
+                            g.data[pp + d] = dval + pixels[x][y];
                             if(d===0) g.data[pp+3] = 255; // alpha channel
                         }
                     }
