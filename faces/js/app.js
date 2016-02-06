@@ -13,10 +13,10 @@ var get_pixels = function() {
     for (var i=0;  i < 10;  i++) {
         for (var j=0;  j < 10;  j++) {
             var idx = i*10 + j;
-            if (frame.data[i][j] == "rgba(0, 0, 0, 0)") {
-                x[idx] = 1;
+            if (frame[i][j] == "rgba(0, 0, 0, 0)") {
+                x[idx] = 0;
             } else {
-                x[idx] = parseInt(frame.data[i][j].substring(1));
+                x[idx] = parseInt(frame[i][j].substring(1));
             }
         }
     }
