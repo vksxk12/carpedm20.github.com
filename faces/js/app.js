@@ -91,11 +91,6 @@ function cloneCanvas(oldCanvas) {
 }
 
 $( document ).ready(function() {
-    $("#fakeLoader").fadeOut(3000);
-
-    $("#loading").hide();
-    $("#draw-btn").show();
-    
     draw_pixels(make_z(100, 255));
 
     $('.slick').slick({
@@ -218,9 +213,14 @@ $( document ).ready(function() {
         draw();
     });
 
+    $("#loading").hide();
+    $("#draw-btn").show();
+
     if (!mobilecheck()) {
         draw();
     }
+
+    $("#fakeLoader").fadeOut(3000);
 });
 
 
