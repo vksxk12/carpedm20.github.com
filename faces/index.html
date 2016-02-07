@@ -128,7 +128,7 @@
                 <p>1. 아래에 보이는 100개의 픽셀들을 <b>z</b>의 각 숫자를 나타냅니다.<br/>2. DRAW 버튼을 누르시면 픽셀이 의미하는 <b>z</b>로 이미지가 실시간으로 만들어집니다.<br/>3. 만들어진 사진 위에 마우스를 올리면 사진에 사용된 <b>z</b>가 보입니다.<br/>4. 만들어진 이미지를 누르시면 그 이미지의 <b>z</b>가 복사됩니다.</p>
             </div>
             <div class="col-md-8 col-md-offset-2 col-xs-12">
-                <p><small>(브라우저 성능에 따라 1~10초가 걸릴 수 있습니다)</small></p>
+                <p><small>(컴퓨터 성능에 따라 1~10초가 걸릴며, 모바일에서는 만들어지지 않습니다)</small></p>
                 <div class="row" id="images">
                 </div>
             </div>
@@ -232,15 +232,20 @@
             <div class="col-md-8 col-md-offset-2 col-xs-12 text-left">
                 <p><br/><br/>아래의 사진들은 100 차원의 <b>z</b> 값 중에서 임의의 차원들을 0부터 1까지 바꾸면서 <b>생성자</b> 신경망에 넣은 결과이며, 점점 미소를 짓거나, 안경이 생기거나, 흑백 사진이 되거나, 성별이 바뀌는 등의 결과를 확인하실 수 있습니다.</p>
             </div>
-            <div class="col-md-8 col-md-offset-2 slick">
-                <img src="img/change1.png"/>
-                <img src="img/change2.png"/>
-                <img src="img/change3.png"/>
-                <img src="img/change4.png"/>
-                <img src="img/change5.png"/>
-                <img src="img/change6.png"/>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+                <div class="slick">
+                    <img src="img/change1.png"/>
+                    <img src="img/change2.png"/>
+                    <img src="img/change3.png"/>
+                    <img src="img/change4.png"/>
+                    <img src="img/change5.png"/>
+                    <img src="img/change6.png"/>
+                </div>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-12">
                 <p><br><br><b>프사 뉴럴</b>의 코드는 <a href="https://github.com/carpedm20/DCGAN-tensorflow" target="_blank">이곳</a>에 공개되어 있습니다.</p>
             </div>
