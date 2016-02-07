@@ -6,6 +6,19 @@ function rgb2hex(rgb){
         ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : "";
 }
 
+var make_z = function(max_length) {
+    var z = []
+    while(z.length < max_length){
+      var randomnumber=Math.random()
+      var found=false;
+      for(var i=0;i<z.length;i++){
+        if(z[i]==randomnumber){found=true;break}
+      }
+      if(!found)z[z.length]=randomnumber;
+    }
+    return z;
+}
+
 var get_pixels = function() {
     var x = new Array(100);
     var frame = PIXEL.getCurrentFrame();
@@ -21,6 +34,18 @@ var get_pixels = function() {
         }
     }
     return x;
+}
+
+var draw_pixels = function(x) {
+    var frame = PIXEL.getCurrentFrame();
+
+    PIXEL.setDraw(true);
+    for (var i=0;  i < 10;  i++) {
+        for (var j=0;  j < 10;  j++) {
+            PIXEL.doAction(i, j, "#440000")
+        }
+    }   
+    PIXEL.setDraw(false);
 }
 
 var clip_pixel = function(x){
