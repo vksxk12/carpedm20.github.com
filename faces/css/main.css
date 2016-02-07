@@ -474,3 +474,16 @@ body {
 
 .tooltip > .tooltip-inner { background-color: white; color: black; }
 .tooltip > .tooltip-arrow { border-bottom-color: white; color: black; }
+
+.tooltip {
+    opacity: 1 !important;
+}
+
+.pixel-tooltip {
+    padding: 0px !important;
+    background-color: transparent !important;
+}
+
+.fa-5 {
+    font-size: 40px !important;
+}
