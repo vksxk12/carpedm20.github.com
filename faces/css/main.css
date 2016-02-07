@@ -476,7 +476,7 @@ body {
 .tooltip > .tooltip-arrow { border-bottom-color: white; color: black; }
 
 .tooltip {
-    opacity: 1 !important;
+    opacity: 0.95 !important;
 }
 
 .pixel-tooltip {

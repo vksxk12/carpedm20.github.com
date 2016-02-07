@@ -110,6 +110,13 @@ $(document).ready(function() {
             {
                 breakpoint: 1200,
                 settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5
+                }
+            },
+            {
+                breakpoint: 980,
+                settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
                 }
