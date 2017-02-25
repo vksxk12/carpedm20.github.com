@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
-
 a, a:hover, a:active, .header .title .title2:before {
   color: #fff;
 }
@@ -444,11 +442,6 @@ a.button {
   color: #fff;
 }
 
-.jejuhallasan {
-  font-family: 'Jeju Hallasan', cursive;
-}
-
-/** 이하는 공통 **/
 .normal {
   font-style: normal;
 }
@@ -490,11 +483,11 @@ a.button {
 }
 
 .progress-dark {
-  background-color: #160c0b;
+  background-color: #222;
 }
 
 .progress-bar {
-  background-color: #333;
+  background-color: #666;
 }
 
 .progress {
@@ -508,7 +501,7 @@ a.button {
   width: 100%;
   line-height: 2rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .name {
