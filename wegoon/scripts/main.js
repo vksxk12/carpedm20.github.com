@@ -35,8 +35,8 @@
         "저는 진작에 접어야할듯^400 군대각^400 - 츤기^2000",
     ];
     shuffle(quotes);
-    quotes.unshift("기억해요, 레드.^1000 희망은^400 좋은 거에요.^2000");
-    quotes.push("기억해요, 레드.^1000 희망은^400 좋은 거에요.^2000");
+    quotes.unshift("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
+    quotes.push("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
 
     $(".typed").typed({
       strings: quotes,
@@ -55,6 +55,12 @@
   };
 
   app.controller('wegoonCtrl', function($scope, $timeout) {
+    function updateDurations() {
+      $scope.now = moment();
+      $timeout(updateDurations, 100, true);
+    };
+    updateDurations();  
+
     $scope.moment = moment;
 
     var data = [
@@ -76,56 +82,50 @@
       ['1992.11.08', 21, '규2'],
     ];
 
-      $scope.slaves = _.map(data, function(item) {
-        return new Slave(item);
-      });
+    $scope.slaves = _.map(data, function(item) {
+      return new Slave(item);
+    });
 
-      $scope.now = moment();
-      function updateDurations() {
-        $scope.now = moment();
-        $timeout(updateDurations, 100, true);
-      };
-      updateDurations();  
-
-      $scope.diff = function(src, dst) {
-        var diff = moment.duration(src.diff(dst));
-        if( viewport.is('xs') ) {
-          var text = "{0}일 {1}분 {2}초".format(
-              Math.floor(diff.asDays()), diff.minutes(), diff.seconds());
-        } else {
-          var text = "{0}일 {1}시간 {2}분 {3}초 {4}".format(
-              Math.floor(diff.asDays()), diff.hours(), diff.minutes(), diff.seconds(), diff.milliseconds());
-        }
-        return text;
+    $scope.now = moment();
+    $scope.diff = function(src, dst) {
+      var diff = moment.duration(src.diff(dst));
+      if( viewport.is('xs') ) {
+        var text = "{0}일 {1}분 {2}초".format(
+            Math.floor(diff.asDays()), diff.minutes(), diff.seconds());
+      } else {
+        var text = "{0}일 {1}시간 {2}분 {3}초 {4}".format(
+            Math.floor(diff.asDays()), diff.hours(), diff.minutes(), diff.seconds(), diff.milliseconds());
       }
+      return text;
+    }
 
-      $scope.getFormattedDate = function(date) {
-        if( viewport.is('xs') ) {
-          var text = date.format('L');
-        } else {
-          var text = date.format('LL');
-        }
-        return text;
+    $scope.getFormattedDate = function(date) {
+      if( viewport.is('xs') ) {
+        var text = date.format('L');
+      } else {
+        var text = date.format('LL');
       }
+      return text;
+    }
 
-      $scope.slavePercentage = function(slave) {
-        var percent = ($scope.now - slave.startDate) / (slave.endDate - slave.startDate) * 100;
-        var num = Math.max(Math.min(percent, 100), 0);
-      
-        if (num == 0 || num == 100) {
-          num = Math.ceil(num);
-        } else {
-          num = num.toFixed(15);
-        }
-        return num;
+    $scope.slavePercentage = function(slave) {
+      var percent = ($scope.now - slave.startDate) / (slave.endDate - slave.startDate) * 100;
+      var num = Math.max(Math.min(percent, 100), 0);
+    
+      if (num == 0 || num == 100) {
+        num = Math.ceil(num);
+      } else {
+        num = num.toFixed(15);
       }
+      return num;
+    }
 
-      $scope.hoverIn = function(){
-        this.hoverShow = true && $scope.slavePercentage(this.slave) != 100;
-      };
+    $scope.hoverIn = function(){
+      this.hoverShow = true && $scope.slavePercentage(this.slave) != 100;
+    };
 
-      $scope.hoverOut = function(){
-        this.hoverShow = false;
-      };
+    $scope.hoverOut = function(){
+      this.hoverShow = false;
+    };
   });
 })(jQuery, document, window, ResponsiveBootstrapToolkit);
