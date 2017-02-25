@@ -35,13 +35,14 @@
         "저는 진작에 접어야할듯^400 군대각^400 - 츤기^2000",
     ];
     shuffle(quotes);
-    quotes.unshift("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
-    quotes.push("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
+    //quotes.unshift("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
+    //quotes.push("기억해요, 레드.^700 희망은^400 좋은 거에요.^2000");
 
     $(".typed").typed({
       strings: quotes,
       typeSpeed: 80,
       backSpeed: 20,
+      loop: true,
       showCursor: true,
     });
   });
