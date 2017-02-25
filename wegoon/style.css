@@ -243,6 +243,18 @@ body {
   -o-background-size: cover;
 }
 
+.redemption-no-bg {
+  overflow: hidden;
+  display: table;
+  width: 100%;
+  height: auto;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 .content {
   margin-top: 5rem;
   overflow: auto;
