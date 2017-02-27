@@ -102,7 +102,7 @@
 
     $scope.getFormattedDate = function(date) {
       if( viewport.is('xs') ) {
-        var text = date.format('L');
+        var text = date.format('YY.MM.DD');
       } else {
         var text = date.format('LL');
       }

@@ -479,7 +479,7 @@ a.button {
 }
 
 .item {
-  padding-bottom: 3.5rem;
+  overflow: auto;
 }
 
 .progress-dark {
