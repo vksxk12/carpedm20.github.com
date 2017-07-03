@@ -58,7 +58,7 @@
               <div class="col-sm-10 col-xs-10">
                 <uib-progressbar class="progress-bar-animated progress-dark" max="100" 
                   value="slavePercentage(slave)">
-                  <div class="progressText">
+                  <div class="progressText" clicked="false" ng-click="clickShow()">
                     <div class="startText" ng-show="hoverShow">{{ getFormattedDate(slave.startDate) }}</div>
                     <div class="endText" ng-show="hoverShow">{{ getFormattedDate(slave.endDate) }}</div>
                     <div class="diffText" ng-show="hoverShow">{{ diff(slave.endDate, now) }}</div>

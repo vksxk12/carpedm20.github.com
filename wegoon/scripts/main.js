@@ -56,6 +56,8 @@
   };
 
   app.controller('wegoonCtrl', function($scope, $timeout) {
+    $scope.alert = window.alert;
+
     function updateDurations() {
       $scope.now = moment();
       $timeout(updateDurations, 100, true);
@@ -129,6 +131,16 @@
 
     $scope.hoverOut = function(){
       this.hoverShow = false;
+    };
+
+    $scope.clickShow = function(){
+      if (this.clicked) {
+        this.hoverShow = false;
+        this.clicked = false;
+      } else {
+        this.hoverShow = true;
+        this.clicked = true;
+      }
     };
   });
 })(jQuery, document, window, ResponsiveBootstrapToolkit);
