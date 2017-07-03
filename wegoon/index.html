@@ -50,7 +50,7 @@
     <div class="content">
       <div class="page">
         <ul>
-          <li class="item" ng-repeat="slave in slaves | orderBy:['finished','endDate']" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+          <li class="item" ng-repeat="slave in slaves | orderBy:['finished','percent']" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
             <div>
               <div class="col-sm-2 col-xs-2 name">
                 {{ slave.name }}

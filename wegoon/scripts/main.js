@@ -122,6 +122,7 @@
       } else {
         num = num.toFixed(15);
       }
+      this.percent = num;
       return num;
     }
 
