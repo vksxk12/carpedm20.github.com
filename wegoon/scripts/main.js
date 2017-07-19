@@ -56,6 +56,8 @@
   };
 
   app.controller('wegoonCtrl', function($scope, $timeout) {
+    $scope.alert = window.alert;
+
     function updateDurations() {
       $scope.now = moment();
       $timeout(updateDurations, 100, true);
@@ -65,19 +67,21 @@
     $scope.moment = moment;
 
     var data = [
-      ['2015.04.09', 24, '규1'],
       ['2015.10.22', 34, '겨태'],
       ['2017.02.22', 36, '곡재'],
       ['2017.03.01', 36, '말리꽃'],
       ['2017.06.02', 36, '웅자'],
+      ['2017.07.31', 21, '호떡'],
+
       ['2020.02.01', 21, '조잼'],
       ['2020.01.01', 21, '도갱'],
       ['2020.01.01', 21, '유잉'],
       ['2020.01.01', 21, '환자'],
       ['2020.01.01', 21, '츤기'],
       ['2020.01.01', 21, '균'],
-      ['2020.01.01', 21, '호떡'],
       ['2020.01.01', 34, '오'],
+
+      ['2015.04.09', 24, '규1'],
       ['1992.11.08', 1, '해충'],
       ['1992.11.08', 1, '고갱'],
       ['2012.05.21', 24, '규2'],
@@ -118,6 +122,7 @@
       } else {
         num = num.toFixed(15);
       }
+      this.percent = num;
       return num;
     }
 
@@ -127,6 +132,16 @@
 
     $scope.hoverOut = function(){
       this.hoverShow = false;
+    };
+
+    $scope.clickShow = function(){
+      if (this.clicked) {
+        this.hoverShow = false;
+        this.clicked = false;
+      } else {
+        this.hoverShow = true;
+        this.clicked = true;
+      }
     };
   });
 })(jQuery, document, window, ResponsiveBootstrapToolkit);
