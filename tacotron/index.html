@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D.Voice</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://wavesurfer-js.org/dist/wavesurfer.min.js"></script>
+
+    <script src="./js/siriwave.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body class="layout-default">
+
+    <section class="hero is-bold has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <h1 id="bulma" class="title">
+            Multi-speaker Tacotron in TensorFlow
+          </h1>
+          <h2 class="subtitle">
+            <br/>TensorFlow implementation of <strong>Deep Voice 2: Multi-Speaker Neural Text-to-Speech</strong>.
+          </h2>
+          <h2 class="subtitle">
+            <a href="https://github.com/devsisters/multi-speaker-tacotron-tensorflow">[GitHub]</a>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-dark is-bold dark">
+      <div class="hero-body">
+        <div class="container">
+          <div class="section-body" onKeyPress="return checkSubmit(event)">
+            <h1 class="title is-bold has-text-centered">
+              Samples
+            </h1>
+
+            <div class="field">
+              <div class="control">
+                <div class="columns">
+                  <div class="column"></div>
+                  <div class="column">
+                    <div id="wave"></div>
+                  </div>
+                  <div class="column"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <div id="waveform"></div>
+              </div>
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron works well on out-of-domain and complex words.</h2 class="title is-4">
+              <table class="audio">
+                <tr><td class="transcript">“Generative adversarial network or variational auto-encoder.”</td></tr>
+                <tr><td><audio controls><source src="demos/gan_or_vae_r2.wav"></audio></td></tr>
+              </table class="audio">
+
+              <table class="audio">
+                <tr><td class="transcript">“Basilar membrane and otolaryngology are not auto-correlations.”</td></tr>
+                <tr><td><audio controls><source src="demos/basilar.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron learns pronunciations based on phrase semantics.</h2 class="title is-4">
+              <div>(Note how Tacotron pronounces "read" in the two phrases.)</div>
+              <table class="audio">
+                <tr><td class="transcript">“He has read the whole thing.”</td></tr>
+                <tr><td><audio controls><source src="demos/read_past.wav"></audio></td></tr>
+                <tr><td class="transcript">“He reads books.”</td></tr>
+                <tr><td><audio controls><source src="demos/reads.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron is somewhat robust to spelling errors.</h2 class="title is-4">
+              <table class="audio">
+                <tr><td class="transcript">“Thisss isrealy awhsome.”</td></tr>
+                <tr><td><audio controls><source src="demos/awhsome.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron is sensitive to punctuation.</h2 class="title is-4">
+              <div>(Note how the comma in the first phrase changes prosody.)</div>
+              <table class="audio">
+                <tr><td class="transcript">“This is your personal assistant, Google Home.”</td></tr>
+                <tr><td><audio controls><source src="demos/ghome_comma.wav"></audio></td></tr>
+                <tr><td class="transcript">“This is your personal assistant Google Home.”</td></tr>
+                <tr><td><audio controls><source src="demos/ghome_nocomma.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron learns stress and intonation.</h2 class="title is-4">
+              <div>
+                (The speaker is instructed to stress on capitalized words in our
+                training set. So simply capitalizing some words will change the overall
+                intonation.)
+              </div>
+              <table class="audio">
+                <tr><td class="transcript">“The buses aren't the problem, they actually provide a solution.”</td></tr>
+                <tr><td><audio controls><source src="demos/bus_nostress.wav"></audio></td></tr>
+                <tr><td class="transcript">“The buses aren't the PROBLEM, they actually provide a SOLUTION.”</td></tr>
+                <tr><td><audio controls><source src="demos/bus_stress.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+            <div class="field example">
+              <h2 class="title is-4">Tacotron's prosody changes when turning a statement into a question.</h2 class="title is-4">
+              <table class="audio">
+                <tr><td class="transcript">“The quick brown fox jumps over the lazy dog.”</td></tr>
+                <tr><td><audio controls><source src="demos/fox_period.wav"></audio></td></tr>
+                <tr><td class="transcript">“Does the quick brown fox jump over the lazy dog?”</td></tr>
+                <tr><td><audio controls><source src="demos/fox_question.wav"></audio></td></tr>
+              </table class="audio">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <footer class="footer">
+      <div class="container has-text-centered">
+        <p>DEVSISTERS</p>
+        <br/>
+        <p>
+          <a class="icon" href="https://github.com/devsisters">
+            <i class="fa fa-github"></i>
+          </a>
+        </p>
+      </div>
+    </footer>-->
+  </body>
+</html>
