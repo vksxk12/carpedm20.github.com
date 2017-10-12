@@ -56,9 +56,22 @@
 }
 
 .dark {
-    background-color: black;
+    background-color: #202020 !important;
 }
 
-.example{
+.example {
     margin-bottom: 3rem !important;
+}
+
+.audio {
+    margin-bottom: 1em;
+}
+
+.transcript {
+    line-height: 1.5em;
+    margin-bottom: 0.5rem;
+}
+
+.play {
+    margin-bottom: 0.5em;
 }
