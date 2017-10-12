@@ -62,8 +62,8 @@ var inactiveColors = [[241,243,245], [206,212,218], [222,226,230], [173,181,189]
       setDefaultColor(sw, false);
     });
 
-    $("#synthesizer").click(function() {
-      wavesurfer.load('../static/audio/kakao.mp3');
+    $(".play").click(function() {
+      wavesurfer.load(this.getAttribute("data"));
 
       sw.setSpeed(0.1)
       setDefaultColor(sw, true);
