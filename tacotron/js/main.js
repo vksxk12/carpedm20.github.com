@@ -7,8 +7,16 @@ var defaultAmplitude = 0.3;
 var activeColors = [[32,133,252], [94,252,169], [253,71,103]];
 var inactiveColors = [[241,243,245], [206,212,218], [222,226,230], [173,181,189]];
 
+function displayRawAudio() {
+  $('a.play').replaceWith(function(){
+    return $("<audio controls><source src='" + $(this).attr('data') + "'>", {html: $(this).attr('data')});
+  });
+  return $("#display-audio").remove();
+}
+
 (function(window, document, undefined){
   window.onload = init;
+
 
   function setDefaultColor(sw, isActive) {
     for (idx=0; idx < sw.curves.length; idx++) {
